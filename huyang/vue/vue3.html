@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表达式</title>
+	<style type="text/css" media="screen">
+		.active{
+			background-color: orange;
+		}
+
+		.text-color{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	     <p v-bind:style="{'color':color_val,'fontSize':'30px'}">爱神的箭暗红色的</p>
+	     <hr>
+	     <p v-bind:style="myStyle">
+	     爱神的箭暗红色的2</p>
+	     <hr>
+	     <p v-bind:style="[myStyle,bg]">
+	     爱神的箭暗红色的3</p>
+	    
+    </div>
+</body>
+<script src="js/vue.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				color_val:"red",
+				myStyle:{
+					"text-decoration":"underline",
+					"color":"orange"
+				},
+				bg:{
+					background:"#666666"
+				}
+			}
+		});
+		
+		
+	</script>
+</html>

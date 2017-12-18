@@ -1,0 +1,32 @@
+.middle .content li {
+    padding: 13px 0;
+}
+.middle .content li + li{
+    border-top: 1px dashed #ccc;
+}
+.middle .content li p{
+    display: inline-block;
+    max-width: 550px;
+    margin-right: 30px;
+}
+.middle .content li input{
+    width: 0;
+}
+.middle .content li input:checked + img{
+    background: url(../images/login/iconA.jpg) left center no-repeat;
+}
+.middle .content li img{
+    vertical-align: -3px;
+    padding-left: 36px;
+    background: url(../images/login/icon.jpg) left center no-repeat;
+    margin-right: 10px;
+}
+.middle .content li a{
+    color: #43afbc;
+}
+.middle .content li span{
+    float: right;
+}
+.middle .content .tab + .tab{
+    display: none;
+}

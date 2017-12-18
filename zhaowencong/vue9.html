@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for循环</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="(val,key) in aa">{{key}}{{val}}</li>
+		</ul>
+		<hr>
+		<ul>
+			<li v-for="(val,key,index) in user">{{key}}{{val}}{{index}}</li>
+		</ul>
+		<hr>
+		<ul>
+			<li v-for="i in num">{{i}}</li>
+		</ul>
+		<hr>
+		<template v-if="show">
+			<ul>
+				<li v-for="i in num">{{i}}</li>
+			</ul>
+		</template>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				aa:["banner","apple","orange"],
+				user:{
+					"name":"lucy",
+					"age":18,
+
+				},
+				num:[1,2,3,4],
+				show:true
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+/* line 2, ../scss/shop_list.scss */
+.middle {
+  font: 12px/1 "宋体" #333;
+  background-color: #fff;
+}
+
+/* 页面导航 */
+/* line 8, ../scss/shop_list.scss */
+.middle .sub-nav {
+  background: url(../images/shop_list/sub_nav.png) left 26px no-repeat;
+  padding: 25px 0 20px 20px;
+  font-size: 12px;
+  font-family: "宋体";
+}
+
+/* line 14, ../scss/shop_list.scss */
+.middle .sub-nav dt {
+  color: #333;
+}
+
+/* line 17, ../scss/shop_list.scss */
+.middle .sub-nav dl > * {
+  display: inline;
+}
+
+/* line 20, ../scss/shop_list.scss */
+.middle .sub-nav dd {
+  color: #43aebe;
+}
+
+/* line 23, ../scss/shop_list.scss */
+.middle .sub-nav dd:before {
+  content: '>';
+  margin: 0 2px;
+  color: #333;
+}
+
+/* 商品列表导航 */
+/* line 30, ../scss/shop_list.scss */
+.middle .commodity {
+  font: 12px "宋体";
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+/* line 35, ../scss/shop_list.scss */
+.middle .commodity > div {
+  border-top: 1px solid #ccc;
+}
+
+/* line 38, ../scss/shop_list.scss */
+.middle .commodity > div:first-child {
+  border-top: none;
+}
+
+/* line 41, ../scss/shop_list.scss */
+.middle .commodity > div > div {
+  float: left;
+}
+
+/* line 44, ../scss/shop_list.scss */
+.middle .commodity .left {
+  padding-left: 18px;
+  position: relative;
+  width: 102px;
+  border-right: 1px solid #ccc;
+  background: #ecebeb;
+}
+
+/* line 51, ../scss/shop_list.scss */
+.middle .commodity .left > div {
+  position: relative;
+  top: 50%;
+  margin-top: -8px;
+  position: absolute;
+}
+
+/* line 57, ../scss/shop_list.scss */
+.middle .commodity .center {
+  width: 841px;
+  padding: 0 32px;
+}
+
+/* line 61, ../scss/shop_list.scss */
+.middle .commodity .center ul {
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+/* line 65, ../scss/shop_list.scss */
+.middle .commodity .center li {
+  float: left;
+  width: 65px;
+  height: 18px;
+  text-align: left;
+  line-height: 18px;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+/* line 78, ../scss/shop_list.scss */
+.middle .commodity .center .on {
+  border-color: transparent;
+  color: #43aebe;
+}
+
+/* line 82, ../scss/shop_list.scss */
+.middle .commodity .center li:hover {
+  color: #43aebe;
+}
+
+/* line 85, ../scss/shop_list.scss */
+.middle .commodity .right {
+  width: 145px;
+  padding-top: 7px;
+  padding-right: 27px;
+  text-align: right;
+}
+
+/* line 91, ../scss/shop_list.scss */
+.middle .commodity .right a {
+  border: 1px solid #168f9e;
+  color: #43aebe;
+  background-color: #eee;
+  padding: 2px 9px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* line 99, ../scss/shop_list.scss */
+.middle .commodity .right a:hover {
+  text-decoration: none;
+}
+
+/* line 103, ../scss/shop_list.scss */
+.brand .on {
+  border-color: #43aebe !important;
+}
+
+/* line 106, ../scss/shop_list.scss */
+.brand li {
+  text-align: center !important;
+  margin-top: 7px;
+}
+
+/* line 110, ../scss/shop_list.scss */
+.brand ul {
+  margin-bottom: 7px;
+}
+
+/* line 113, ../scss/shop_list.scss */
+.priceRange .on {
+  border-color: transparent !important;
+  color: #ff3333 !important;
+}
+
+/* line 117, ../scss/shop_list.scss */
+.priceRange .center li:hover {
+  color: #ff3333 !important;
+}
+
+/* line 120, ../scss/shop_list.scss */
+.targetUser .left > div {
+  top: auto !important;
+  margin-top: 17px !important;
+}
+
+/* line 124, ../scss/shop_list.scss */
+.targetUser input {
+  width: 13px;
+  height: 11px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 4px;
+  visibility: hidden;
+}
+
+.targetUser  input:before{
+  content: '';
+  display: block;
+  visibility: visible;
+  background: url(../images/shop_list/icon.png) left center no-repeat;
+  width: 15px;
+  height: 14px;
+  cursor: pointer;
+}
+.targetUser  input:checked:before{
+  content: '';
+  display: block;
+  visibility: visible;
+  background: url(../images/shop_list/iconA.png) left center no-repeat;
+  color: #333 !important;
+  width: 15px;
+  height: 14px; 
+  cursor: pointer;
+}
+
+/* line 135, ../scss/shop_list.scss */
+.targetUser li label {
+  cursor: pointer;
+}
+
+/* line 138, ../scss/shop_list.scss */
+.targetUser .on {
+  
+}
+
+/* line 143, ../scss/shop_list.scss */
+.middle .buttonBar .sure {
+  border: 1px solid #43aebe;
+  margin-right: 20px;
+  color: #43aebe;
+}
+
+/* line 148, ../scss/shop_list.scss */
+.middle .buttonBar .cancel {
+  border: 1px solid #b5b5b5;
+}
+
+/* line 151, ../scss/shop_list.scss */
+.middle .buttonBar {
+  margin-top: 35px;
+  height: 30px;
+  text-align: center;
+  background: #ecebeb;
+  position: relative;
+  width: 1077px;
+  left: -32px;
+}
+
+/* line 160, ../scss/shop_list.scss */
+.middle .buttonBar a {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-top: 5px;
+}
+
+/* line 165, ../scss/shop_list.scss */
+.middle .buttonBar .cancel:hover {
+  color: #333 !important;
+}
+
+/* line 169, ../scss/shop_list.scss */
+.shop-list .top-nav {
+  border: 1px solid #bfbfbf;
+  height: 38px;
+  background-color: #eee;
+  margin-bottom: 40px;
+  margin-top: 21px;
+}
+
+/* line 176, ../scss/shop_list.scss */
+.shop-list .top-nav dl > * {
+  font-size: 12px;
+  font-family: "宋体";
+  float: left;
+}
+
+/* line 181, ../scss/shop_list.scss */
+.shop-list .top-nav dt {
+  color: #fff;
+  background-color: #43aebe;
+  margin: -1px 0;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 15px;
+  width: 65px;
+}
+
+/* line 190, ../scss/shop_list.scss */
+.shop-list .top-nav dd {
+  margin-top: 13px;
+  margin-bottom: 9px;
+  padding-right: 13px;
+  padding-left: 18px;
+  border-right: 1px solid #ccc;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+/* line 198, ../scss/shop_list.scss */
+.shop-list .top-nav dd i {
+  background: url(../images/shop_list/iconU.jpg) center center no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 7px;
+  margin-left: 4px;
+}
+
+/* line 205, ../scss/shop_list.scss */
+.shop-list .top-nav .on {
+  color: #43aebe;
+}
+
+/* line 208, ../scss/shop_list.scss */
+.shop-list .top-nav dd ~ .on {
+  color: #333;
+}
+
+/* line 211, ../scss/shop_list.scss */
+.shop-list .top-nav .on i {
+  background: url(../images/shop_list/iconD.png) center center no-repeat;
+}
+
+/* line 214, ../scss/shop_list.scss */
+.shop-list .top-nav .price {
+  padding-left: 16px;
+  font: 12px/38px "宋体";
+}
+
+/* line 218, ../scss/shop_list.scss */
+.shop-list .top-nav .price-input input {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 38px;
+  height: 18px;
+  border: 1px solid #ccc;
+}
+
+/* line 225, ../scss/shop_list.scss */
+.shop-list .top-nav .price > a,
+.shop-list .top-nav .price > .text {
+  vertical-align: middle;
+}
+
+/* line 229, ../scss/shop_list.scss */
+.shop-list .top-nav .price-input > * {
+  vertical-align: middle;
+}
+
+/* line 232, ../scss/shop_list.scss */
+.shop-list .top-nav .price-input span {
+  border-top: 1px solid #333;
+  width: 20px;
+  display: inline-block;
+}
+
+/* line 237, ../scss/shop_list.scss */
+.shop-list .top-nav .right {
+  font: 12px/38px "宋体";
+  padding-right: 12px;
+}
+
+/* line 241, ../scss/shop_list.scss */
+.shop-list .top-nav .right b {
+  color: #ff3333;
+}
+
+/* line 244, ../scss/shop_list.scss */
+.shop-list .list ul {
+  margin-right: -7px;
+}
+
+/* line 247, ../scss/shop_list.scss */
+.shop-list .list li {
+  width: 215px;
+  height: 328px;
+  padding: 10px 9px;
+  border: 1px solid #ccc;
+  margin-right: 6px;
+  margin-bottom: 7px;
+  float: left;
+}
+
+/* line 256, ../scss/shop_list.scss */
+.shop-list .list li img {
+  max-width: 100%;
+}
+
+/* line 259, ../scss/shop_list.scss */
+.shop-list .list .pic {
+  text-align: center;
+}
+
+/* line 262, ../scss/shop_list.scss */
+.shop-list .list .price {
+  font-size: 24px;
+  color: #ff3333;
+  font-family: "微软雅黑";
+  vertical-align: middle;
+}
+
+/* line 268, ../scss/shop_list.scss */
+.shop-list .list .freePostage {
+  font-size: 12px;
+  color: #fff;
+  font-family: "宋体";
+  display: inline-block;
+  background-color: #43aebe;
+  width: 40px;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  margin-left: 14px;
+}
+
+/* line 281, ../scss/shop_list.scss */
+.shop-list .list .stock {
+    color: #666;
+    font-size: 12px;
+    font-family: "宋体";
+    float: right;
+    line-height: 28px;
+}
+
+/* line 286, ../scss/shop_list.scss */
+.shop-list .list p {
+  font-size: 12px;
+  font-family: "宋体";
+  color: #333;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+/* line 295, ../scss/shop_list.scss */
+.shop-list .list .shopCar {
+  font-size: 14px;
+  display: inline-block;
+  font-family: "微软雅黑";
+  background-color: #43aebe;
+  color: #fff;
+  width: 88px;
+  height: 23px;
+  text-align: center;
+  line-height: 23px;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 306, ../scss/shop_list.scss */
+.shop-list .list .evaluate {
+  height: 18px;
+  padding-top: 5px;
+}
+
+/* line 310, ../scss/shop_list.scss */
+.shop-list .list .evaluate span {
+  font-size: 12px;
+  font-family: "宋体";
+  color: #ccc;
+}
+
+/* line 315, ../scss/shop_list.scss */
+.shop-list .list .evaluate i {
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+  background: url(../images/shop_list/icon1.jpg) center center no-repeat;
+  margin-left: 13px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* line 324, ../scss/shop_list.scss */
+.shop-list .list .evaluate i + i {
+  background: url(../images/shop_list/icon2.jpg) center center no-repeat;
+}
+
+/* line 327, ../scss/shop_list.scss */
+.shop-list .list .fr {
+  height: 24px;
+  line-height: 20px;
+}
+
+/* line 331, ../scss/shop_list.scss */
+.shop-list .footer-nav {
+  margin-top: 34px;
+  margin-bottom: 101px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+}
+
+/* line 338, ../scss/shop_list.scss */
+.shop-list .footer-nav a {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+}
+
+/* line 342, ../scss/shop_list.scss */
+.shop-list .footer-nav .on {
+  border-color: #089aa0;
+}
+
+/* line 345, ../scss/shop_list.scss */
+.shop-list .footer-nav input {
+  width: 28px;
+  height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 351, ../scss/shop_list.scss */
+.shop-list .footer-nav .button {
+  background-color: #43aebe;
+  color: #fff;
+  padding: 4px 10px;
+}
+
+/* line 356, ../scss/shop_list.scss */
+.shop-list .footer-nav .button:hover {
+  text-decoration: none;
+}
+
+/* line 359, ../scss/shop_list.scss */
+.shop-list .division {
+  margin-bottom: 40px;
+  padding: 0 8px;
+}
+
+.new-nav {
+  width: 100%;
+}
+.new-nav tbody{
+  font-size: 12px;
+  color: #333;
+  font-family: "宋体";
+}
+.new-nav tr{
+  border: 1px solid #ccc;
+}
+.new-nav .title{
+  width: 100px;
+  padding-left: 20px;
+  background: #ececeb;
+}
+.new-nav .content{
+  border-left: 1px solid #ccc;
+  position: relative;
+}
+.new-nav ul{
+  padding: 20px 200px 20px 30px;
+  overflow: hidden;
+}
+.new-nav ul li{
+  float: left;
+  margin-right: 10px;
+}
+.new-nav ul li span{
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid transparent;
+  display: block;
+}
+.new-nav ul li input{
+  display: none;
+}
+.new-nav ul li input:checked + span{
+  border: 1px solid #43aebe;
+  color: #43aebe;
+}
+.new-nav .moreSelect{
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  cursor: pointer;
+}
+.new-nav .moreSelect input{
+  display: none;
+}
+.new-nav .moreSelect span{
+  padding: 4px 10px;
+  border: 1px solid #168f9e;
+  color: #43aebe;
+  background: #eee;
+}

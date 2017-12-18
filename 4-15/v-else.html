@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-else/v-else-if</title>
+</head>
+<body>
+	<div id="app">
+	    <!-- v-else 紧跟着v-if -->
+	    <div v-if="is_login">
+	    	jim,欢迎回来!
+	    </div>
+	    <div v-else>
+	    	请登录!
+	    </div>
+	    <hr>
+	    <h1>v-else-if</h1>
+	    <div v-if="num=='a'">
+	    	is A
+	    </div>
+	    <div v-else-if="num=='b'">
+	    	is B
+	    </div>
+	    <div v-else-if="num=='c'">
+	    	is C
+	    </div>
+	    <div v-else>
+	    	not ABC
+	    </div>
+	    <hr>
+	    <!-- v-if 结合template,template不会保留-->
+	    <template v-if="is_show">
+	    	<span>欢迎您回来!lucy!</span>
+	    </template>
+
+	    <hr>
+	    用户登录方式：
+	    <!-- 使用 key 让元素独立 -->
+	    <hr>
+	    <template v-if="loginType === 'username'">
+		  <label>Username</label>
+		  <input placeholder="Enter your username" key="username-input">
+		</template>
+
+		<template v-else>
+		  <label>Email</label>
+		  <input placeholder="Enter your email address" key="email-input">
+		</template>
+		<button type="button" v-on:click="toggleLogin()">切换登录状态</button>
+
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				is_login:false,
+				num:'f',
+				is_show:true,
+				loginType:"username"
+			},
+			methods:{
+				toggleLogin:function(){
+					if(this.loginType==="username"){
+						this.loginType="email";
+					}else{
+						this.loginType="username";
+					}
+				}
+			}
+		});
+	</script>
+</body>
+</html>

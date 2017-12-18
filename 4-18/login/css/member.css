@@ -1,0 +1,27 @@
+.middle{
+    padding-top: 39px;
+    background-color: #eee;
+}
+.middle .sub-nav{
+    width: 130px;
+    text-align: center;
+    color: #333;
+    margin-right: 19px;
+}
+.middle .sub-nav h1{
+    font: 18px "微软雅黑";
+}
+.middle .sub-nav dl{
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 8px;
+}
+.middle .sub-nav dt{
+    font: 14px "微软雅黑";
+    margin-top: 22px;
+}
+.middle .sub-nav dd{
+    font-size: 12px;
+}
+.middle .sub-nav dl > * {
+    margin-bottom: 14px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>if</title>
+
+</head>
+<body>
+	<div id="app">
+		<div v-if="is_login">
+			欢迎回来
+		</div>
+		<div v-else>
+			请登录
+		</div>
+		<hr>
+		<div v-if="num='a'">
+			A
+		</div>
+		<div v-else-if="num='b'">
+			B
+		</div>
+		<div v-else-if="num='c'">
+			C
+		</div>
+		<div v-else=>
+			not ABC
+		</div>
+		<template v-if="is_show">
+			<span>欢迎回来</span>
+		</template>
+		<hr>
+		<template v-if="logintyp=='username'">
+			<label>username</label>
+			<input type="text" name="" value="" placeholder="输入用户名">
+		</template>
+		<template v-else>
+			<label>email</label>
+			<input type="text" name="" value="" placeholder="邮箱输入">
+		</template>
+		<button type="button" v-on:click="acc()">切换登录方式</button>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				is_login:true,
+				num:"b",
+				is_show:true,
+				logintyp:'username'
+			},
+			methods:{
+				acc:function(){
+					if(this.logintyp=='username'){
+						this.logintyp='email';
+					}else{
+						this.logintyp='username';
+					}
+				}
+			}
+		
+		})
+	</script>
+</body>
+</html>

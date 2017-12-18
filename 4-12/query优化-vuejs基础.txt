@@ -1,0 +1,63 @@
+内容回顾:json-ajax
+今天内容:query优化-vuejs基础
+
+一，query 优化（js优化）
+
+1.选择器总是从ID选择器开始继承
+2.在class前使用tag(标签名)
+3.将jQuery对象缓存起来
+4.对直接的DOM操作进行限制
+5.阻止事件冒泡。
+
+方式一：event.stopPropagation();
+        $("#div1").mousedown(function(event){
+            event.stopPropagation();
+        });
+方式二：return false;
+        $("#div1").mousedown(function(event){
+            return false;
+        });
+但是这两种方式是有区别的。return false 不仅阻止了事件往上冒泡，而且阻止了事件本身。event.stopPropagation() 则只阻止事件往上冒泡，不阻止事件本身。
+场景应用： Google 和 百度的联想框，当弹出下拉列表，用户在下拉列表区域按下鼠标时需要让光标仍然保持在文本输入框。
+
+6.e.target;  获得触发事件的对象
+
+$("#entryform").bind("focus", function(e){
+        var $cell = $(e.target); // e.target 捕捉到触发的目标元素
+        $cell.addClass("selected");
+    }).bind("blur", function(e){
+        var $cell = $(e.target);
+        $cell.removeClass("selected");
+    });
+
+通过在父级监听获取焦点和失去焦点的事件，对目标元素进行操作。
+在上面代码中，父级元素扮演了一个调度员的角色, 它可以基于目标元素绑定事件。
+如果你发现你给很多元素绑定了同一个事件监听, 那么现在的你肯定知道哪里做错了。
+
+7.js美化， 压缩，http://tool.lu/js/
+
+8.给选择器一个上下文
+jQuery选择器中有一个这样的选择器，它能指定上下文。
+$( expression, context );
+普通方式：
+$('.myDiv')
+改进方式：
+$('.myDiv' , $("#listItem") )
+
+
+参考：jquery-优化建议.docx  
+ http://www.frontopen.com/1077.html
+ http://www.jb51.net/article/47639.htm
+
+二，vuejs基础
+
+
+vuejs:https://cn.vuejs.org/
+ http://www.runoob.com/vue2/vue-tutorial.html
+
+***********************************************************
+实训项目：1.query优化-vuejs基础
+                 2.百单网Q3实现
+***********************************************************
+下一篇:vuejs
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93

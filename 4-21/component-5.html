@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的数据传递-子组件传递数据到父组件-$emit-自定义事件</title>
+</head>
+<body>
+	<div id="app">
+	    <p>{{msg}}</p>
+	    <hr>
+	    <!-- 2.在自定义标签上 用v-on 帮定一个自定义事件，来处理子组件发过来的数据 -->
+		<my-div v-on:recive-data-handle="reciveDataFunc"></my-div>
+	</div>
+		
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		//定义一个列表组件
+		//名称规范：my-list,myList,MyList
+		Vue.component("my-div",{
+			template:`
+ 				<button type="button" v-on:click="sendData">发送数据到父组件</button>
+			`,
+			data:function(){
+				return {
+					child_msg:"我是来自子组件!"
+				}
+			},
+			methods:{
+				sendData:function(){
+					// alert(this.child_msg);
+					//1.触发父级上的一个自定义事件，来传递子组件的数据($emit(“事件名称”，数据))
+					//$emit(reciveData,this.child_msg) 说明
+					//注意：recive-data-handle 要触发的事件的名称（单词+中划线(-)），this.child_msg 传递的数据
+					this.$emit("recive-data-handle",this.child_msg);
+				}
+			}
+		});
+
+		//创建Vue 实例
+		new Vue({
+			el:"#app",
+			data:{
+				msg:"loading..."
+			},
+			methods:{
+				//3.在Vue 实例中定义一方法，处理子组件的数据
+				reciveDataFunc:function(data){
+					var _this = this;
+					_this.msg = data;
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

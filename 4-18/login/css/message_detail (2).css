@@ -1,0 +1,96 @@
+.middle .content .head-nav a{
+    margin-right: 24px;
+}
+.middle table{
+    width: 100%;
+}
+.middle table tr + tr{
+    border-top: 1px dashed #ccc;
+}
+.middle table td{ 
+    padding: 21px 0;
+    color: #666;
+}
+.middle table td + td{
+    text-align: right;
+    padding-right: 68px;
+}
+.middle table label{
+    display: inline-block;
+}
+.middle table label > *{
+    float: left;
+}
+.middle table label input{
+    width: 0;
+}
+.middle table label span{
+    background: url(../images/message_detail/check.jpg) left center no-repeat;
+    display: inline-block;
+    width: 21px;
+    height: 16px;
+    margin-top: 48px;
+    margin-left: 30px;
+    margin-right: 32px;
+}
+.middle table label input:checked + span{
+    background: url(../images/message_detail/checkA.jpg) left center no-repeat;
+}
+.middle table label span + div{
+    background: url(../images/message_detail/message_detail.jpg);
+    width: 212px;
+    height: 124px;
+    text-align: center;
+    margin-right: 30px;
+}
+.middle table label h1{
+    font: 24px "微软雅黑";
+    color: #fff;
+    margin: 16px 0;
+}
+.middle table label sup{
+    font-size: 14px;
+    vertical-align: top;
+    margin-left: 2px;
+}
+.middle table label p{
+    font-size: 12px;
+    color: #fff;
+    width: 140px;
+    margin: 6px auto;
+    line-height: 16px;
+}
+.middle table label ul{
+    border: none !important;
+}
+.middle table label .table{
+    height: 124px;
+    max-width: 440px;
+}
+.middle table label li{
+    margin: 14px 0;
+    text-align: left;
+}
+.middle table label li:before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    float: left;
+    background: #ccc;
+    margin-right: 12px;
+}
+.middle table .delete{
+    color: #43aebe;
+}
+.middle table .delete + p{
+    margin-top: 31px;   
+}
+.tab + .tab{
+    display: none;
+}
+table{
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+}

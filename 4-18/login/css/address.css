@@ -1,0 +1,163 @@
+.middle .head .title{
+    background: url(../images/common/address.jpg) 1px center no-repeat;
+}
+.middle .content{
+    border: 1px solid #ccc;
+    padding: 0 14px;
+    margin-bottom: 162px;
+}
+.middle .content h1{
+    font: 14px "微软雅黑";
+    color: #333;
+    line-height: 42px;
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.middle .content li{
+    border: 1px solid #ccc; 
+    width: 192px;
+    height: 116px;
+    padding: 16px 14px;
+    font-size: 12px; 
+    color: #333;
+    margin: 35px;
+    float: left;
+}
+.middle .content li p{
+    margin-bottom: 16px;
+}
+.middle .content li > div{
+    text-align: center;
+    padding-top: 12px;
+}
+.middle .content li a{
+    width: 46px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid transparent;
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px; 
+    cursor: pointer;
+}
+.middle .content li a:hover{
+    text-decoration: none;
+}
+.middle .content li .choose{
+    color: #43aebe;
+    border-color: #43aebe;
+}
+.middle .content > label{
+    margin-top: 20px;
+    margin-left: 28px;
+    font-size: 12px;
+    color: #333;
+    display: inline-block;
+    width: 66px;
+    text-align: right;
+    margin-right: 10px;
+}
+.middle .content label b{
+    color: #ff3333;
+}
+.middle .content input{
+    width: 143px;
+    height: 23px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    line-height: 23px;
+}
+.middle .content select{
+    width: 150px;
+    height: 23px;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    background: url(../images/address/addr_icon.jpg) no-repeat scroll right center transparent;
+    padding-right: 14px;
+}
+#detailAddress{
+    width: 248px;
+}
+.middle .content .defaultAddress {
+    margin: 12px 0;
+    margin-left: 104px;
+}
+.middle .content .defaultAddress > *{
+    vertical-align: middle;
+    font-size: 12px;
+    color: #333;
+}
+.middle .content .defaultAddress span{
+    display: inline-block;
+    padding-left: 14px;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    background: url(../images/pro_details/check_icon.png) left center no-repeat;
+}
+.middle .content .defaultAddress input:checked + span{
+    background: url(../images/pro_details/checkA_icon.png) left center no-repeat;
+}
+.middle .content input[type="checkbox"] {
+    display: none;
+    width: 0;
+}
+.middle .content .defaultAddress label{
+    cursor: pointer;
+}
+.middle .content .btn{
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    background-color: #43aebe;
+    margin-left: 104px;
+}
+.middle .content .btn:hover{
+    text-decoration: none;
+}
+.middle .content  .submit{
+    margin-top: 62px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #ccc;
+    margin-left: -14px;
+    margin-right: -14px;
+    text-align: right;
+}
+.middle .content  .submit a{
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #43aebe;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    text-align: center;
+}
+.middle .content  .submit a:hover{
+    text-decoration: none;
+}
+#confirmBtn{
+    cursor: pointer;
+}
+#saveAddress{
+    cursor: pointer;
+}
+.middle .content > b{
+    padding-left: 10px;
+    font-size: 12px;
+    color: #f00;
+    display: none;
+}

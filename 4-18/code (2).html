@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证码</title>
+	<style type="text/css" media="screen">
+		img{cursor:pointer;}
+	</style>
+</head>
+<body>
+	<img src="http://api.yyw66.cn/dodiapi/code.php?n=4&info=16$100$30" alt="" id="code">
+
+	<script type="text/javascript">
+		window.onload=function(){
+			var img = document.getElementById("code");
+			var url = "http://api.yyw66.cn/dodiapi/code.php?n=4&info=16$100$30";
+			img.onclick=function(){
+				var time = new Date().getTime();
+				this.src=url+"&t="+time;
+			}
+		}
+	</script>
+</body>
+</html>

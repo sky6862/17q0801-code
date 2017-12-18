@@ -1,0 +1,17 @@
+git bash 设置：
+
+登录时，提示缺少key,做如下设置：
+
+1.设置用户名，邮箱：
+
+git config --global user.name 'userName'    //设置git账户，userName为你的git账号，
+git config --global user.email 'email'
+
+2.SSH Key设置
+
+生成SSH Key：ssh-keygen -t rsa -C "your_email@example.com"
+
+生成Key时弹出选项，回车选择默认即可。
+Key保存位置：/root/.ssh
+
+登陆GitHub，创建new SSH key，其内容为/root/.ssh/id_rsa.pub中文本

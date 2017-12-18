@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的数据传递-父组件传递数据到子组件</title>
+</head>
+<body>
+	<div id="app">
+	   <!--  <a href="" title=""></a> -->
+	   <!--1.通过在自定义标签上绑定属性，来向子组件传递数据--> 
+	 
+		<my-list v-bind:user="mylist" v-bind:title="first_title"></my-list>
+		<my-list :user="mylist2"></my-list>
+
+	</div>
+		
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		//定义一个列表组件
+		//名称规范：my-list,myList,MyList
+		Vue.component("my-list",{
+			template:`
+				<div>
+					<p>{{my_self}}</p>
+					<hr>
+					<h1 v-if="is_show">{{title}}</h1>
+				    <hr>
+					<ol>
+						<li v-for="data in user">{{data.title}}</li>
+						<!--<li>item</li>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>-->
+					</ol>
+					<span>{{is_show}}</span>
+				</div>
+			    `,
+			//2.在子组件里面， 通过props 属性，显示声明 父组件中自定义的属性的名称，就可以使用属性对应的数据了(直接使用就好了，可以在模板，方法里面使用)
+			//；组件自己的data 定义的是它自己的数据
+			props:['user',"title"],
+
+			//组件自己的数据
+			data:function(){
+				return {
+					my_self:"自己的数据!"
+					// is_show:false
+				}
+			},
+			computed:{
+				is_show:function(){
+					if(!this.title){
+						return false;
+					}else{
+						return true;
+					}
+				}
+			}
+		});
+
+		//创建Vue 实例
+		new Vue({
+			el:"#app",
+			data:{
+				//第1个组件的数据
+				mylist:[
+					{"title":"item -1"},
+					{"title":"item -2"},
+					{"title":"item -3"}
+				],
+				//第2个组件的数据
+				mylist2:[
+					{"title":"item2 -1"},
+					{"title":"item2 -2"},
+					{"title":"item2 -3"}
+				],
+				first_title:"标题1"
+			}
+		});
+
+	</script>
+</body>
+</html>

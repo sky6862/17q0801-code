@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>watch监察</title>
+
+</head>
+<body>
+	<div id="app">
+		用户名：<input type="text" v-model="username">
+		<hr>
+		内容：<input type="text" v-model="name1">
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+			username:"",
+			name1:""
+			},
+			watch:{
+				username:function(v){
+					if(v!=""){
+						this.name1=v;
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

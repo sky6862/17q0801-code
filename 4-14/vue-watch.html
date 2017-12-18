@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-watch－当需要在数据变化时执行异步或开销较大的操作时</title>
+</head>
+<body>
+	<div id="app">
+	     用户名:<input type="text" name="" v-model="username">
+	     <hr>
+	     <!-- 输入的内容是：<input type="text" v-bind:value="username"> -->
+	     输入的内容是：<input type="text" v-model="repeat_name">
+
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				username:'',
+				repeat_name:''
+			},
+			//监听数据变化的一个属性
+			watch:{
+				//参数 newVal 表示变化后的值
+				username:function(newVal){
+					if(newVal!=''){
+						this.repeat_name = newVal;
+					}
+				}
+				//更多的监听
+			}
+		});
+	</script>
+</body>
+</html>

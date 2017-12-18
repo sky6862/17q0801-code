@@ -1,0 +1,86 @@
+
+.middle .content form > div input{
+    width: 140px;
+    height: 28px;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+}
+.middle .content form > div input[type=radio]{
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    vertical-align: -2px;
+}
+.middle .content form .sex label + label{
+    margin-right: 22px;
+    cursor: pointer;
+}
+.middle .content form > div{
+    margin-bottom: 19px;
+}
+.middle .content form b{
+    color: #cc3300;
+}
+.middle .content form .birthday select{
+    width: 68px;
+    height: 23px;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+}
+.middle .content form .birthday label + select{
+    margin-left: 0;
+}
+.middle .content form select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    background: url(../images/common/select1.jpg) no-repeat scroll right center transparent;
+    padding-right: 23px;
+
+    font-size: 12px;
+}
+.middle .content .email a{
+    color: #0099cc;
+}
+.middle .content .address select{
+    width: 98px;
+    height: 28px;
+    border: 1px solid #ccc;
+    background: url(../images/common/select2.jpg) no-repeat scroll right center transparent;
+    padding-right: 29px;
+    padding-left: 8px;
+    margin-right: 10px;
+}
+.middle .content .address-detail input{
+    width: 318px;
+}
+.middle .content .btn{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    font: 18px/30px "微软雅黑";
+    background-color: #43aebe;
+    margin-left: 80px;
+    margin-bottom: 86px;
+}
+.middle .content .btn:hover{
+    text-decoration: none;
+}
+
+.middle .content .btn{
+    border: none;
+    cursor: pointer;
+}
+.middle .content .box .tab{
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    width: auto;
+}
+.tab + .tab{
+    display: none;
+}

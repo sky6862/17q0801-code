@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style type="text/css" media="screen">
+	    .box{
+	    	margin-top: 30px;
+	    	width:300px;
+	    	padding:15px;
+	    	background: orange;
+	    }
+	    /*进入时样式*/
+	    .bounce-enter-active{
+	    	animation: my_bounce 2s;
+	    	-webkit-animation: my_bounce 2s;	
+	    }
+        
+         /*离开时样式*/
+	    .bounce-leave-active{
+	    	animation: my_bounce 2s reverse;
+	    	-webkit-animation: my_bounce 2s reverse;	
+	    }
+
+        /*定义一个动画，把元素放大2倍*/
+	    @keyframes my_bounce{
+	    	0%{
+	    		transform: scale(0);
+	    	}
+	    	50%{
+	    		transform: scale(1.5);
+	    	}
+			100%{
+	    		transform: scale(1);
+	    	}
+	    }
+
+	    @-webkit-keyframes my_bounce{
+	    	0%{
+	    		-webkit-transform: scale(0);
+	    	}
+	    	50%{
+	    		-webkit-transform: scale(1.5);
+	    	}
+			100%{
+	    		-webkit-transform: scale(1);
+	    	}
+	    }
+	</style>
+</head>
+<body>
+    <div id="app">
+    	<button type="button" v-on:click="show">显示/隐藏</button>
+    	<!-- 使用transition 组件包主要使用动画的元素 -->
+    	
+    	<transition name="bounce">
+    		<div v-show="is_show" class="box">
+    			CSS 动画用法同 CSS 过渡，区别是在动画中 v-enter 类名在节点插入 DOM 后不会立即删除，而是在 animationend 事件触发时删除。
+    		</div>
+    	</transition>	
+    </div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				is_show:true
+			},
+			methods:{
+				show:function(){
+					if(this.is_show==true){
+						this.is_show=false;
+					}else{
+						this.is_show=true;
+					}
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

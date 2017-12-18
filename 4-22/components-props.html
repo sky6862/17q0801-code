@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>props验证</title>
+</head>
+<body>
+    <div id="app">
+    	<my-div v-bind:attr_1="'传递过过来的数据!'"></my-div>
+    	<hr>
+    	<!-- <my-span :attr_1="'传递过过来的数据2!'"></my-span>
+    	<hr> -->
+    	<!-- <my-span :attr_1="11"></my-span> -->
+    	<hr>
+    	<my-span :attr_1="999"></my-span>
+    </div>
+	
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			components:{
+				myDiv:{
+					template:`
+						<h1>{{data}}</h1>
+						`,
+					props:["attr_1"],
+					data:function(){
+						return {
+							data:this.attr_1
+						}
+					}
+				},//组件结束
+				mySpan:{
+					template:`
+						<h2>{{data}}</h2>
+						`,
+					// props:["attr_1"],
+					props:{
+						attr_1:{
+							type:[String,Number],//数据类型：字符串
+							default:"nice to meet you！",
+							validator:function(val){
+								return val > 10;
+							},
+							required:true//必须写的
+						}
+					},
+					data:function(){
+						return {
+							data:this.attr_1
+						}
+					}
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

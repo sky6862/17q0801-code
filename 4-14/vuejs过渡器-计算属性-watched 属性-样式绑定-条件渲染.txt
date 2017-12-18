@@ -1,0 +1,15 @@
+内容回顾:git使用-vuejs-模板语法-指令
+今天内容:vuejs过渡器-计算属性-watched 属性-样式绑定-条件渲染
+
+常用指令：过滤器，计算属性，watch监察属性，class/style绑定，v-if,v-show指令 使用
+
+vuejs:https://cn.vuejs.org/
+ http://www.runoob.com/vue2/vue-tutorial.html
+
+***********************************************************
+实训项目：1.练习：过滤器，计算属性，watch监察属性，class/style绑定，v-if,v-show指令 使用
+
+          2.百单网Q3实现
+***********************************************************
+下一篇:条件列表渲染-组件
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93

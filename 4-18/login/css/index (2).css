@@ -1,0 +1,510 @@
+
+/* line 1, ../scss/index.scss */
+.middle {
+  overflow: hidden;
+}
+
+/* line 4, ../scss/index.scss */
+.middle .show > div {
+  margin-bottom: 60px;
+}
+
+/* line 7, ../scss/index.scss */
+.breadCrumb {
+  margin-top: 30px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+/* line 12, ../scss/index.scss */
+.breadCrumb .title li {
+  width: 33.33333%;
+  float: left;
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+  height: 44px;
+  line-height: 44px;
+}
+
+/* line 22, ../scss/index.scss */
+.breadCrumb .title li:hover {
+  color: #43aebe;
+}
+
+/* line 25, ../scss/index.scss */
+.breadCrumb .title .on {
+  color: #43aebe;
+  position: relative;
+}
+
+/* line 29, ../scss/index.scss */
+.breadCrumb .title .on:after {
+  content: "";
+  border: 7px solid transparent;
+  border-bottom: 9px solid #43aebe;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -7px;
+}
+
+/* line 38, ../scss/index.scss */
+.breadCrumb .content {
+  border: 1px solid #d8d8d8;
+  border-top: 2px solid #43aebe;
+}
+
+/* line 42, ../scss/index.scss */
+.breadCrumb .content li {
+  float: left;
+  border-left: 1px solid #d8d8d8;
+  margin: 10px 0;
+  height: 298px;
+  box-sizing: border-box;
+  width: 20%;
+}
+
+/* line 50, ../scss/index.scss */
+.breadCrumb .content li .pic {
+  text-align: center;
+}
+
+/* line 53, ../scss/index.scss */
+.breadCrumb .content li:first-child {
+  border-left: none;
+}
+
+/* line 56, ../scss/index.scss */
+.breadCrumb .content li > div ~ * {
+  margin-left: 54px;
+}
+
+/* line 59, ../scss/index.scss */
+.breadCrumb .content li h2 {
+  color: #333;
+  font-size: 16px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+/* line 65, ../scss/index.scss */
+.breadCrumb .content .price span:first-child {
+  color: #ff6666;
+  font-size: 18px;
+  margin-right: 12px;
+  vertical-align: text-top;
+}
+
+/* line 71, ../scss/index.scss */
+.breadCrumb .content .price span:first-child b {
+  font-size: 14px;
+}
+
+/* line 74, ../scss/index.scss */
+.breadCrumb .content .price span + span {
+  color: #666;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+/* line 79, ../scss/index.scss */
+.breadCrumb .content .btn {
+  width: 90px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  background-color: #43aebe;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 90, ../scss/index.scss */
+.breadCrumb .content .btn a:hover {
+  text-decoration: none;
+}
+
+/* line 93, ../scss/index.scss */
+.breadCrumb .content > div {
+  display: none;
+}
+
+/* line 96, ../scss/index.scss */
+.breadCrumb .content > .on {
+  display: block;
+}
+
+/* line 99, ../scss/index.scss */
+.middle .show .title h2 {
+  line-height: 22px;
+}
+
+/* line 102, ../scss/index.scss */
+.middle .show .title h2 img {
+  vertical-align: bottom;
+  margin-left: 4px;
+}
+
+/* line 106, ../scss/index.scss */
+.middle .show .title > div {
+  height: 11px;
+  background: url(../images/index/icon.jpg) repeat-x;
+  margin: 8px 0 21px;
+}
+
+/* line 111, ../scss/index.scss */
+.middle .show .content > div dl {
+  transition: all 1s;
+  width: 200%;
+}
+
+/* line 115, ../scss/index.scss */
+.middle .show .content > div dd {
+  float: left;
+  width: 50%;
+}
+
+/* line 119, ../scss/index.scss */
+.middle .show .content {
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  overflow: hidden;
+}
+
+/* line 123, ../scss/index.scss */
+.middle .show .content > div {
+  float: left;
+}
+
+/* line 126, ../scss/index.scss */
+.middle .show .content > .left {
+  width: 300px;
+  height: 498px;
+}
+
+/* line 130, ../scss/index.scss */
+.middle .show .content > .right-up {
+  width: 878px;
+  height: 249px;
+  padding: 0 10px;
+}
+
+/* line 135, ../scss/index.scss */
+.middle .show .content > .right-down {
+  width: 879px;
+  height: 249px;
+  padding-left: 16px;
+  padding-right: 3px;
+}
+
+/* line 141, ../scss/index.scss */
+.middle .show .content .right-up > div {
+  height: 248px;
+  border-bottom: 1px solid #eee;
+  float: left;
+  text-align: center;
+}
+
+/* line 147, ../scss/index.scss */
+/*.middle .show .content .pic {
+  width: inherit;
+  height: 178px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}*/
+
+/* line 154, ../scss/index.scss */
+
+
+/* line 160, ../scss/index.scss */
+.middle .show .content span {
+  font: 18px "微软雅黑";
+  color: #ff6666;
+}
+
+/* line 164, ../scss/index.scss */
+.middle .show .content span + span {
+  font: 12px "微软雅黑";
+  color: #666;
+  margin-left: 14px;
+  text-decoration: line-through;
+}
+
+/* line 170, ../scss/index.scss */
+.middle .show .content .right-up .left {
+  width: 225px;
+  border-right: 1px solid #eee;
+}
+
+/* line 174, ../scss/index.scss */
+.middle .show .content .right-up .middle {
+  width: 439px;
+  border-right: 1px solid #eee;
+}
+
+/* line 178, ../scss/index.scss */
+.middle .show .content .right-up .right {
+  width: 212px;
+}
+
+/* line 181, ../scss/index.scss */
+.middle .show .content > .right-down > div {
+  text-align: center;
+  float: left;
+  width: 219px;
+  height: 249px;
+  border-left: 1px solid #eee;
+}
+
+/* line 188, ../scss/index.scss */
+.middle .show .content > .right-down > div:first-child {
+  border-left: none;
+}
+
+/* line 191, ../scss/index.scss */
+.middle .show .content img {
+  max-width: 100%;
+}
+
+/* line 194, ../scss/index.scss */
+.show .right-up .middle {
+  position: relative;
+}
+
+/* line 197, ../scss/index.scss */
+.show .right-up .middle .carousel {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 202, ../scss/index.scss */
+.show .right-up .middle .carousel-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+}
+
+/* line 207, ../scss/index.scss */
+.show .right-up .middle .carousel-icon ul {
+  left: -50%;
+  position: relative;
+}
+
+/* line 211, ../scss/index.scss */
+.show .right-up .middle .carousel-icon li {
+  width: 15px;
+  height: 15px;
+  background: #ccc;
+  margin: 0 2.5px;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 220, ../scss/index.scss */
+.show .right-up .middle .carousel-icon li:hover {
+  background: #43aebe;
+}
+
+/* line 223, ../scss/index.scss */
+.show .right-up .middle .carousel-icon .on {
+  background: #43aebe;
+}
+
+/* line 226, ../scss/index.scss */
+.show .right-up .middle .carousel ul {
+  position: relative;
+  width: 200%;
+}
+
+/* line 230, ../scss/index.scss */
+.show .right-up .middle .carousel li {
+  float: left;
+  width: 50%;
+}
+
+/* line 234, ../scss/index.scss */
+.show .right-up .middle .carousel .slidePrev {
+  transform: translateX(100%);
+}
+
+/* line 237, ../scss/index.scss */
+.show .right-up .middle .carousel .slideNext {
+  transform: translateX(-100%);
+}
+
+/* line 240, ../scss/index.scss */
+.show .right-up .middle .carousel .on {
+  position: absolute;
+}
+
+/* line 243, ../scss/index.scss */
+.show .right-up .middle .carousel .prev {
+  transform: translate(-100%);
+}
+
+/* line 246, ../scss/index.scss */
+.show .right-up .middle .carousel .next {
+  transform: translate(100%);
+}
+
+/* line 249, ../scss/index.scss */
+.show .right-up .middle .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+.middle .show .content > .left{
+  position: relative;
+  height: 511px;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.middle .show .content > .left .big-info{
+  position: absolute;
+  color: #333;
+  font-family: "微软雅黑";
+  width: 100%;
+  text-align: center;
+  top: 21px;
+}
+.middle .show .content > .left .big-info h1{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 13px;
+  letter-spacing: 2px;
+}
+.middle .show .content > .left .big-info a:hover{
+  text-decoration: none;
+}
+.middle .show .content > .left .big-info p{
+  font-size: 14px;
+  letter-spacing: 1.4px;
+}
+.middle .show .content > .left .big-list{
+    position: absolute;
+    width: 200px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #333;
+    left: 50%;
+    margin-left: -80px;
+    bottom: 30px;
+}
+.middle .show .content > .left .big-list li{
+  float: left;
+  margin-bottom: 11px;
+  width: 50%;
+}
+.middle .show .content > .right{
+  float: left;
+  width: 898px;
+}
+.show .shop-list > li{
+  float: left;
+  width: 25%;
+  padding-bottom: 26px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  height: 256px;
+}
+
+.show .shop-list > li > a{
+  display: table-cell;
+  vertical-align: middle;
+  height: 176px;
+  text-align: center;
+  width: 224.5px;
+}
+.show .shop-list img{
+  max-width: 100%;
+}
+.show .shop-list p{
+  text-align: center;
+  color: #ff6666;
+  font-size: 18px;
+  font-family: "微软雅黑";
+}
+.show .shop-list p del{
+  color: #666;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.middle .show .content h2 {
+  font: 14px "微软雅黑";
+  color: #333;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.show .shop-list > li .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+.show .shop-list > li:nth-child( 2 ) {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.show .shop-list > li:nth-child( 2 ) a{
+  display: block;
+}
+.show .shop-list > li:nth-child( 2 ) img{
+  display: block;
+  width: 100%;
+}
+.show .shop-list > li:nth-child( 2 ) .carousel img{
+  height: 256px;
+}
+.show .shop-list > li:nth-child( 2 ) li{
+  padding-bottom: 0;
+  width: 50%;
+  float: left;
+}
+.show .shop-list > li:nth-child( 2 ) ul{
+  width: 200%;
+  position: relative;
+}
+.show .shop-list > li:nth-child( 2 ) .carousel-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+}
+
+/* line 207, ../scss/index.scss */
+.show .shop-list > li:nth-child( 2 ) .carousel-icon ul {
+  left: -50%;
+  position: relative;
+}
+
+/* line 211, ../scss/index.scss */
+.show .shop-list > li:nth-child( 2 ) .carousel-icon li {
+  width: 15px;
+  height: 15px;
+  background: #ccc;
+  margin: 0 2.5px;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 220, ../scss/index.scss */
+.show .shop-list > li:nth-child( 2 ) .carousel-icon li:hover {
+  background: #43aebe;
+}
+
+/* line 223, ../scss/index.scss */
+.show .shop-list > li:nth-child( 2 ) .carousel-icon .on {
+  background: #43aebe;
+}
+.middle .show .content > .left > a > img{
+  height: 511px;
+}

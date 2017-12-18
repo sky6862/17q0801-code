@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器-格式化数据</title>
+</head>
+<body>
+	<div id="guolv">
+		<span>{{"￥999"|price}}</span>
+		<hr>
+		<span>{{999|price1("$",6)}}</span>
+		<hr>
+		<b>{{"hello world!"|UpperCase}}</b>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	//全局过滤器
+		Vue.filter("UpperCase",function(v){
+			var font=v.substring(0,1).toUpperCase();
+			return font+v.substring(1);
+		});
+		
+		//局部过滤器 只能当前id选择器使用
+		new Vue({
+			el:"#guolv",
+			filters:{
+				price:function(v){
+					return v+".0000";
+				},
+				price1:function(v,s,n){
+					var new_n=v.toFixed(n);
+					return s+new_n;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

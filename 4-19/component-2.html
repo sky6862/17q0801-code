@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件-选项</title>
+	<style type="text/css" media="screen">
+		.pannel{
+			border:1px solid orange;
+			border-radius: 5px 5px 0 0;
+			width: 300px;
+
+		}
+
+		.pannel .head{
+			height: 45px;
+			line-height: 45px;
+			background-color:#337AB7;
+			padding:0 15px;
+		}
+
+		.pannel .body{
+			padding:0 15px;
+		}
+
+		.pannel .footer{
+			padding:0 15px;
+			background-color: #f5f5f5;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<my-div></my-div>
+		<!-- <ul>
+			<my-div></my-div>
+		</ul> -->
+		<!-- 应该使用 is 属性来使用组件 -->
+		<ul>
+			<li is="my-div"></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			components:{
+				//创建一个组件
+				myDiv:{
+					//组件的选项/参数：data,methods,computed...(每个组件其它就是一个vue实例，vue实例有的大部分选项，组件都有)
+					template:`<span v-on:click="show">{{msg}}</span>`, //组件模板
+					// data:{ //组件数据
+					// 	msg:"组件信息!"
+					// }
+					//其中，data 选项必须是一个function,并返回一个对象
+					data:function(){
+						return {
+							msg:"组件信息!"
+						}
+					},
+					methods:{
+						show:function(){
+							alert("点了我");
+						}
+					}
+				}
+			}
+		});
+	</script>
+</body>
+</html>

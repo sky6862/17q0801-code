@@ -1,0 +1,166 @@
+.middle {
+    margin-top: 129px;
+    margin-bottom: 229px;
+}
+
+.middle .left {
+    margin-left: 146px;
+    width: 360px;
+    padding-right: 271px;
+    border-right: 1px solid #ccc;
+}
+
+.middle .left .top {
+    margin-bottom: 72px;
+}
+
+.middle .left .top li {
+    width: 50%;
+    float: left;
+    padding-top: 24px;
+    padding-bottom: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.middle .left .top .on {
+    position: relative;
+    border-color: #fff;
+}
+
+.middle .left .top .on:after {
+    position: absolute;
+    content: '';
+    display: block;
+    border-bottom: 2px solid #43aebe;
+    width: 100%;
+    bottom: -1px;
+}
+
+.middle .left .down {
+    padding-left: 19px;
+}
+
+.middle .left .down label {
+    color: #333;
+    font-size: 12px;
+    padding-right: 6px;
+}
+
+.middle .left .down input {
+    width: 238px;
+    height: 33px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.middle .left .down > li > div {
+    margin-bottom: 25px;
+}
+
+.middle .left .down .check input {
+    width: 138px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.middle .left .down .check a {
+    width: 100px;
+    height: 35px;
+    background: #43aebe;
+    color: #fff;
+    font-size: 12px;
+    line-height: 35px;
+    text-align: center;
+    display: inline-block;
+}
+
+.middle .left .down .check a:hover {
+    text-decoration: none;
+}
+
+.middle .left .down .protocol {
+    padding-left: 66px;
+}
+
+.middle .left .down .protocol input {
+    vertical-align: top;
+    display: none;
+}
+
+.middle .left .down .protocol > * {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.middle .left .down .protocol span{
+    padding-left: 20px;
+    background: url(../images/pro_details/check_icon.png) left center no-repeat;
+    line-height: 14px;
+    display: inline-block;
+    height: 14px;
+}
+
+.middle .left .down .protocol input:checked + span {
+    background: url(../images/pro_details/checkA_icon.png) left center no-repeat;
+}
+
+.middle .left .down .protocol a {
+    color: #299ecd;
+}
+
+.middle .left .down > .on > a {
+    width: 250px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    background-color: #43aebe;
+    margin-left: 66px;
+    text-decoration: none;
+}
+
+.middle .left .down li {
+    display: none;
+}
+
+.middle .left .down > .on {
+    display: block;
+}
+
+.middle .right {
+    padding-top: 8px;
+    padding-left: 54px;
+}
+
+.middle .right p {
+    color: #333;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.middle .right a {
+    width: 80px;
+    height: 30px;
+    padding-left: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    background-color: #43aebe;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-left: 4px;
+    background-image: url(../images/pro_details/enter.jpg);
+    background-position: 11px center;
+    background-repeat: no-repeat;
+}
+
+.footer .bottom {
+    padding-top: 7px;
+}

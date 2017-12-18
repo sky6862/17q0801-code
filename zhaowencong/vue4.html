@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性</title>
+</head>
+<body>
+	<div id="app">
+		<span>{{str}}</span>
+		<hr>
+		<span>{{str.split("").reverse().join("")}}</span>
+		<hr>
+		<span>{{com}}</span>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				str:"abcdef",
+				str1:"hijk"
+			},
+			computed:{
+				com:function(){
+					var arr=this.str1.split("");//字符串转化为数组
+					var new_arr=arr.reverse();//反转数组
+					var new_str=new_arr.join("");//数组转为字符串
+					return new_str;
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

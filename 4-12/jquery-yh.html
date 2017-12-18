@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery优化</title>
+</head>
+<body>
+<!-- 
+	1.选择器总是从ID选择器开始继承
+	2.在class前使用tag(标签名)
+	3.将jQuery对象缓存起来
+	4.对直接的DOM操作进行限制
+	5.阻止事件冒泡。 
+-->
+    
+    <div id="title">
+    	 <p class="title_2">ppppppppppppp</p>
+    	 <span class="title_2">span-1</span>
+    </div>
+    <hr>
+    <p id="myp">
+    	ppppppppppppp
+    	<span>span</span>
+    	<hr>
+    	<span class="title_2">spna-2</span>
+    </p>
+
+   
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+    	// var p = $(".title_2");
+     //    var p2= $("#title .title_2");
+     //    $("#title p.title_2");
+
+     $("span.title_2",$("#title")).css("color","red");
+
+     $(document).ready(function(){
+     	$("#myp span").on("click",function(event){
+     		// event.stopPropagation();//阻止冒泡
+     		alert("span click");
+     		return false;
+     	});
+
+     	$("#myp").on("click",function(){
+     		alert("p click");
+     	});
+
+     });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用组件</title>
+	<style type="text/css" media="screen">
+		.pannel{
+			border:1px solid orange;
+			border-radius: 5px 5px 0 0;
+			width: 300px;
+
+		}
+
+		.pannel .head{
+			height: 45px;
+			line-height: 45px;
+			background-color:#337AB7;
+			padding:0 15px;
+		}
+
+		.pannel .body{
+			padding:0 15px;
+		}
+
+		.pannel .footer{
+			padding:0 15px;
+			background-color: #f5f5f5;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!-- 1.2.使用组件 -->
+	    <my-box></my-box>
+		<my-box></my-box>
+		<my-box></my-box>
+		<my-box></my-box>
+
+		<my-div></my-div>
+        <hr>
+        <!-- 2.2使用组件 -->
+        <my-component></my-component>
+	</div>
+	<hr>
+	<h2>vue2:</h2>
+	<div id="app2">
+		<my-component></my-component>
+		<hr>
+		局部组件:
+		<my-div></my-div>
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //2.1:创建组件：全局方式
+	    Vue.component("myComponent",{
+	    	template:`
+	    		 <button type="button">Add+</button>
+	    		`
+	    });
+        
+        new Vue({
+        	el:"#app2"
+        });
+
+		new Vue({
+			el:"#app",
+			//1.1:创建组件：局部方式,vue实例里面componets 指定
+			components:{
+				myBox:{
+					// template:"<div>组件内容</div>"//组件模板（html）
+					template:`
+						<div class="pannel">
+							<div class="head">title</div>
+							<div class="body">body</div>
+							<div class="footer">footer</div>
+						</div>
+					`//组件模板（html）
+				},
+				myDiv:{
+					template:`
+					<span>
+					   my-span
+					</span>
+					`//template 里面是html代码，但是要用一个标签包含起来
+				}
+			}
+		});
+	</script>
+</body>
+</html>

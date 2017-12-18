@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法</title>
+</head>
+<body>
+	<div id="ppa">
+		<span v-text="mytext"></span>
+		<hr>
+		<span v-html="myhtml"></span>
+		<hr>
+		<img v-bind:src="url" alt="">
+		<hr>
+		<span v-once>{{oncetext}}</span>
+		<hr>
+		<a href="#" title="" v-on:click="jump()">点点点</a>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#ppa",
+			data:{
+				mytext:"我添加的文本",
+				myhtml:'<a href="http://www.baidu.com">aaaa标签</a>',//html一定要用单引号不能用双引号
+				url:"images/1.jpg",
+				oncetext:"一次添加"
+			},
+			methods:{
+				jump:function(){
+
+					alert("这是a标签")
+				}
+			}
+
+		})
+
+	</script>
+</body>
+</html>

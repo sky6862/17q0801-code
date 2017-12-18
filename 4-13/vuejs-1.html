@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>{{表达式}}</title>
+ </head>
+ <body>
+     {{可以放单个js表达式}}
+     <div id="app">
+	  {{msg}}
+	  <hr>
+      {{'abcde'}}
+	  <hr>
+	  {{1+2}}
+	  <hr>
+	  <!--{{if(isActive==true){alert(1)}else{alert(2)}}} -->
+	  {{isActive?'ok':"error"}}
+
+	 </div>
+    
+     
+	 <script src="js/vue.js" type="text/javascript"></script>
+	 <script type="text/javascript">
+	    new Vue({
+		   el:"#app",
+		   data:{
+		      msg:"hello vuejs",
+			  isActive:true
+		   }
+		});
+	 </script>
+ </body>
+</html>

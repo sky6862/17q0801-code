@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>on</title>
+</head>
+<body>
+	<div id="app">
+		<button type="button" v-on:click="count=count+1">加一</button>
+		<hr>
+		<span>点了{{count}}次</span>
+		<hr>
+		<button type="button" v-on:click="show()">加一</button>
+		<hr>
+		<span>点了{{count}}次</span>
+		<hr>
+		<a href="#" title="" v-on:click.prevent="show1()">点我</a>
+		<!-- prevent阻止a标签默认事件 -->
+		<a href="#" title="" @click.prevent="show1()">点他</a><!-- 简写 -->
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				count:0,
+
+			},
+			methods:{
+				show:function(){
+					this.count++;
+				},
+				show1:function(){
+					alert("111登录");
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

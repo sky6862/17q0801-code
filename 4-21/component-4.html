@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的数据传递-父组件传递数据到子组件2-单向数据流</title>
+</head>
+<body>
+	<div id="app">
+	   <!--  <a href="" title=""></a> -->
+	   <!--1.通过在自定义标签上绑定属性，来向子组件传递数据--> 
+	 
+		<my-list v-bind:user="mylist" v-bind:title="first_title"></my-list>
+		<my-list :user="mylist2"></my-list>
+
+	</div>
+		
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		//定义一个列表组件
+		//名称规范：my-list,myList,MyList
+		Vue.component("my-list",{
+			template:`
+				<div>
+				    <span>{{is_show}}</span>
+					<h1 v-if="is_show">{{title}}</h1>
+				    <hr>
+					<!--<ol>
+						<li v-for="data in user">{{data.title}}</li>
+						<!--<li>item</li>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ol>
+					<hr>
+					-->
+					
+					<ol>
+						<li v-for="data in my_data">{{data.title}}</li>
+						<!--<li>item</li>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>-->
+					</ol>
+				</div>
+			    `,
+			//2.在子组件里面， 通过props 属性，显示声明 父组件中自定义的属性的名称，就可以使用属性对应的数据了(直接使用就好了，可以在模板，方法里面使用)
+			//props 用数组({})，或对象方({})式；下面用的时数组的形式取父级的数据
+			//；组件自己的data 定义的是它自己的数据
+			props:['user',"title"],//property 缩写
+
+			//组件自己的数据
+			data:function(){
+				return {
+					my_self:"自己的数据!",
+					my_data:this.user//使用父组件数据:this.属性名称
+				}
+			},
+			//使用计算属性，可以修改，处理 父组件数据的数据
+			computed:{
+				//判断 title 属性是否有内容 ，没有就不显示
+				is_show:function(){
+					if(!this.title){
+						return false;
+					}else{
+						return true;
+					}
+				}
+			}
+		});
+
+		//创建Vue 实例
+		new Vue({
+			el:"#app",
+			data:{
+				//第1个组件的数据
+				mylist:[
+					{"title":"item -1"},
+					{"title":"item -2"},
+					{"title":"item -3"}
+				],
+				//第2个组件的数据
+				mylist2:[
+					{"title":"item2 -1"},
+					{"title":"item2 -2"},
+					{"title":"item2 -3"}
+				],
+				first_title:"标题1"
+			}
+		});
+
+	</script>
+</body>
+</html>

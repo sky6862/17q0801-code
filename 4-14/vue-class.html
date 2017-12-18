@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-class－为元素添加class样式</title>
+	<style type="text/css" media="screen">
+		.active{
+			background-color: orange;
+		}
+
+		.text-color{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	     <!-- 1.对象形式 -->
+	     <p v-bind:class="{'active':is_active}">vue-class－为元素添加class样式</p>
+	     <hr>
+	     <p v-bind:class="{'active':is_active,'text-color':color}">vue-class－为元素添加class样式</p>
+	     <hr>
+	     <div v-bind:class="[class1,class2]">
+	     	2.数组：vue-class－为元素添加class样式
+	     </div>
+
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				is_active:true,
+				color:true,
+				class1:"active",
+				class2:"text-color"
+			}
+		});
+	</script>
+</body>
+</html>

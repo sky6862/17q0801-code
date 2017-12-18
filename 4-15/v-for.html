@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for-列表选项(循环数据/对象，类似for...in)</title>
+</head>
+<body>
+	<div id="app">
+	   <h1>数组</h1>
+	   <ul>
+	   	 	<li v-for="item in frute">{{item}}</li>
+	   </ul>
+
+	   <hr>
+	   <ul>
+	   	 	<li v-for="(val,key) in frute" v-bind:key="key">key:{{key}}-val:{{val}}</li>
+	   </ul>
+
+	   <h2>对象:在对象中，index表示索引，key表示对象属性名</h2>
+	   <ul>
+	   		<li v-for="(val,key,index) in user">key:{{key}}-val:{{val}}-index:{{index}}</li>
+	   </ul>
+	   <hr>
+	   <h1>整数循环</h1>
+	   <ul>
+	   	 <li v-for="item in num">{{item}}</li>
+	   </ul>
+	   <hr>
+	   <h1>v-for+v-if 一起使用</h1>
+	   <template v-if="show">
+	   	   <ul>
+	   	 	<li v-for="item in num">{{item}}</li>
+	   	   </ul>
+	   </template>
+       
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:"#app",
+			data:{
+				frute:["orange","banner","water","banner"],
+				user:{
+					"username":"jim",
+					"age":18
+				},
+				num:[1,2,3,4],
+				show:false
+			}
+		});
+	</script>
+</body>
+</html>

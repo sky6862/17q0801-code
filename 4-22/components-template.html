@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板-x-template</title>
+</head>
+<body>
+	<div id="app">
+		<my-div inline-template>
+			<div v-once>
+				在js中直接写模板字符串!
+			</div>
+		</my-div>
+	</div>
+
+	<script type="text/x-template" id="div_tpl">
+	    <h1>x-template</h1>
+		<div>
+			在js中直接写模板字符串!
+		</div>
+	</script>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		Vue.component("myDiv",{
+			//模板字符串3种方式
+			/*template:`
+				<div v-once>
+					在js中直接写模板字符串!
+				</div>
+			`*/
+			// template:"#div_tpl"
+			/*template:'\
+				<div>\
+					12345\
+				</div>\
+			'*/
+		});
+
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</body>
+</html>

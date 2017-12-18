@@ -1,0 +1,95 @@
+.middle .content th:first-child,
+.middle .content td:first-child{
+    padding-left: 48px;
+}
+.middle .content .num{
+    border: none;
+}
+.middle .content tr .last{
+    width: 122px;
+}
+.middle .foot{
+    padding-left: 125px;
+}
+.middle .foot a{
+    margin-right: 608px;
+}
+tbody .goods{
+    width: 540px;
+}
+.middle .content .num{
+    width: 220px !important;
+    border: none !important;
+}
+.middle .content thead th:first-child{
+    padding-left: 140px !important;
+}
+.middle .content .foot th a{
+    padding-left: 84px;
+}
+.middle .content .foot{
+    margin-top: 39px;
+    margin-bottom: 73px;
+    height: 50px;
+    background-color: #eee;
+}
+.middle .content .foot th:first-child > *{
+    margin-right: 28px;
+}
+.middle .content .foot th a{
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+}
+.middle .content .foot th + th{
+    text-align: right;
+}
+.middle .content .foot th + th > *{
+    display: inline-block;
+    text-align: left;
+    width: 140px;
+}
+.middle .content .foot th + th span{
+    font: 14px "微软雅黑";
+    color: #333;
+}
+.middle .content .foot th + th em{
+    font: 18px "微软雅黑";
+    color: #f00;
+    font-weight: bold;
+}
+.middle .content .foot .btn{
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    background-color: #43aebe;
+    color: #fff;
+    text-align: center;
+    margin-right: 0;
+    font: 18px "微软雅黑";
+    line-height: 50px;
+    border: none;
+    cursor: pointer;
+}
+.middle .foot{
+    font: 14px "微软雅黑";
+    color: #333;
+    margin-bottom: 0px !important;
+}
+.middle .foot .fl a{
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+    line-height: 50px;
+    margin-right: auto !important;
+}
+.middle .foot .fr span{
+    display: inline-block;
+    text-align: left;
+    width: 140px;
+}
+.middle .foot em{
+    font: 18px "微软雅黑";
+    color: #f00;
+    font-weight: bold;
+}

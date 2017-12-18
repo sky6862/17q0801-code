@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡</title>
+	<style type="text/css" media="screen">
+	    /*默认过渡 样式的名称(v-)，可以通过transtion 组件的 name 来重新定义*/
+	    /*1.进入时*/
+		.v-enter{
+			opacity: 0;
+		}
+       
+		.v-enter-to{
+			opacity: 1;
+		}
+ 
+        /*2.离开时*/
+		.v-leave{
+			opacity: 1;
+		}
+
+		.v-leave-to{
+			opacity: 0
+		}
+        
+        /*3.动画过程中的时间，要改变的css样式名称*/
+		.v-enter-active,.v-leave-active{
+			/*css3过渡样式*/
+        	transition: opacity 2s;
+        }
+
+        /*自定义过渡样式的名称*/
+        /*<transition name="fade"></transition> name 表示class 名称 */
+        .fade-enter{
+        	opacity: 0;
+        	background: red;
+        }
+        .fade-enter-to{
+        	opacity: 1;
+        	background: green;
+        }
+
+        .fade-leave{
+        	opacity: 1;
+        	background: green;
+        }
+		.fade-leave-to{
+        	opacity: 0;
+        	background: red;
+        }
+
+        .fade-enter-active,.fade-leave-active{
+        	/*css3过渡样式*/
+        	transition: opacity 2s,background 2s;
+        }
+	</style>
+</head>
+<body>
+    <div id="app">
+    	<button type="button" v-on:click="show">显示/隐藏</button>
+    	<!-- 使用transition 组件包主要使用动画的元素 -->
+    	<transition>
+    		<div v-show="is_show">
+    			is me！
+    		</div>
+    	</transition>
+
+    	<hr>
+    	<transition name="fade">
+    		<div v-show="is_show">
+    			fade 效果!
+    		</div>
+    	</transition>
+    	
+    </div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				is_show:true
+			},
+			methods:{
+				show:function(){
+					if(this.is_show==true){
+						this.is_show=false;
+					}else{
+						this.is_show=true;
+					}
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

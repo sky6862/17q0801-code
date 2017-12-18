@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表达式</title>
+</head>
+<body>
+	<div id="app">
+		{{text}}
+		<hr>
+		{{500*500}}
+		<hr>
+		{{aa?"是a":"不是a"}}
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				text:"vuevuevue框架",
+				aa:false
+			}
+
+		})
+	</script>
+</body>
+</html>

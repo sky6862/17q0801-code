@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板-x-template-动态组件</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-on:click="selectList('compA')">compA</li>
+			<li v-on:click="selectList('compB')">compB</li>
+			<li v-on:click="selectList('compC')">compC</li>
+		</ul>
+
+		<!-- 保留在内存中 -->
+		<keep-alive>
+			<!-- 动态组件 -->
+			<component v-bind:is="currView"></component>
+		</keep-alive>
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				currView:'compA'
+			},
+			components:{
+				compA:{
+					template:'\
+					     <div>is A</div>\
+					'
+				},
+				compB:{
+					template:`
+					     <div>is B</div>
+					`
+				},
+				compC:{
+					template:'\
+					     <div>is C</div>\
+					'
+				}
+			},
+			methods:{
+				selectList:function(obj){
+					this.currView = obj;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.header .top_content .table {
+    height: 60px;
+    text-align: left;
+    padding-left: 11px;
+    border-left: 1px solid #ccc;
+    color: #43aebe;
+    font-size: 24px;
+    font-family: "微软雅黑";
+    position: relative;
+    bottom: 5px;
+}
+
+.header .top_content .center {
+    margin-left: 145px;
+}
+
+.header .top_content .logo,
+.header .top_content .center {
+    padding-bottom: 0;
+}
+
+.header .line {
+    border-bottom: 2px solid #1b3e51;
+}
+
+.footer .bottom {
+    background: #ccc;
+}

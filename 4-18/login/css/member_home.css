@@ -1,0 +1,157 @@
+
+.middle .content > div{
+    background-color: #fff;
+}
+.middle .content{
+    width: 1050px;
+    overflow: hidden;
+}
+.middle .member-msg{
+    width: 440px;
+    padding: 11px 429px 11px 181px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+.middle .member-msg img{
+    float: left;
+    margin-left: -122px;
+    width: 100px;
+    height: 100px;
+}
+.middle .member-msg h2{
+    margin-top: 22px;
+    margin-bottom: 13px;
+    font: 14px "微软雅黑";
+    letter-spacing: 1.4px;
+}
+.experience{
+    display: inline-block;
+    width: 120px;
+    height: 15px;
+    line-height: 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #32afc2;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+}
+.middle .member-msg p{
+    font-size: 12px; 
+    color: #666;
+    letter-spacing: 1.2px;
+    margin-top: 11px;
+    margin-bottom: 8px;
+}
+.middle .member-msg p a{
+    color: #32afc2;
+}
+.middle .member-msg a{
+    color: #333;
+    font-size: 12px;
+}
+.middle .member-msg a:after {
+    content: ']';
+    margin-left: 1px;
+}
+.middle .member-msg a:before {
+    content: '[';
+    margin-right: 1px;
+}
+.middle .member-msg .info{
+    float: right;
+    margin-right: -254px;
+    margin-top: -89px;
+    width: 228px;
+    height: 91px;
+    padding-left: 26px;
+    padding-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #333;
+}
+.middle .member-msg .info p{
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.middle .member-msg .info b{
+    color: #ff3333;
+}
+.middle .announcement{
+    padding: 14px 12px 52px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 31px;
+}
+.middle .announcement h2{
+    padding-left: 29px;
+    background: url(../images/member_home/icon.jpg) left center no-repeat;
+}
+.middle .history{
+    padding: 27px 16px;
+    margin-bottom: 97px;
+}
+.middle .history h2{
+    font: 14px "微软雅黑";
+    color: #333;
+}
+.middle .history .division{
+    margin-top: 11px;
+    margin-bottom: 38px;
+}
+.middle .history ul{
+    margin-right: -36px;
+    margin-bottom: 37px;
+}
+.middle .history li{
+    padding: 9px 7px;
+    width: 206px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 36px;
+    margin-bottom: 36px;
+}
+
+.middle .history li .pic{
+    width: 206px;
+    height: 206px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.middle .history li .pic img{
+    max-width: 100%;
+}
+.middle .history li p{
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 1.2px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+.middle .history li span{
+    color: #ff3333;
+    font: 18px "微软雅黑";
+    vertical-align: middle;
+}
+.middle .history li span b{
+    font-size: 14px;
+}
+.middle .history li > a{
+    width: 83px;
+    height: 24px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #43aebe;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    float: right;
+}
+
+.middle .history li > a:hover{
+    text-decoration: none;
+}

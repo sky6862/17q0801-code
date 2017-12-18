@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	你好jquery:<input type="text" name="" id="name">
+	<hr>
+	<span id="msg"></span>
+
+	<hr>
+	<div id="app">
+	<!--  v-model="username" 看成是一个标签的属性，在vue中叫指令，增强html功能
+          v-model="username" 把数据绑定到变量，具体这就是把表单的值保存到变量username中
+	 -->
+		你好vue:<input type="text" name="" v-model="username">
+		<hr>
+		<!-- {{username}} 在vue中，用{{表达式}}的形式，在页面输出(显示)数据 -->
+		<span>{{username}}</span>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#name").keyup(function(){
+				var val = $(this).val();//得到值
+				$("#msg").text(val);
+			});
+		});
+        
+        //创建一个Vue 实例
+        new Vue({
+        	el:"#app", //挂载点，vue作用范围(作用域)
+        	//data 表示 vue实例中的数据
+        	data:{
+        		username:''
+        	}
+        });
+	</script>
+</body>
+</html>

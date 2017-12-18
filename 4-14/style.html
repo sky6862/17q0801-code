@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind:style－为元素添加style样式</title>
+	<style type="text/css" media="screen">
+		.active{
+			background-color: orange;
+		}
+
+		.text-color{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	     <!-- 1.对象形式 -->
+	     <p v-bind:style="{'color':color_val,'fontSize':'30px'}">v-bind:style－为元素添加style样式</p>
+	     <hr>
+	     <p v-bind:style="myStyle">vue-class－为元素添加class样式</p>
+	     <hr>
+	     <p v-bind:style="[myStyle,bg]">vue-class－为元素添加class样式</p>
+	    
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				color_val:"red",
+				myStyle:{
+					"text-decoration":"underline",
+					"color":"orange"
+				},
+				bg:{
+					background:"#666666"
+				}
+			}
+		});
+	</script>
+</body>
+</html>

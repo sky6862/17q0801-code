@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue过滤器－格式化数据的函数</title>
+</head>
+<body>
+	<div id="app">
+		<span>{{'￥990'|number}}</span>
+		<hr>
+		<span>{{990|numberPro('$',3)}}</span>
+		<hr>
+		<p>{{"hello"|upperCase}}</p>
+	</div>
+	
+	<hr>
+	<span>￥990.00</span>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //3.全局过滤器，可以在所有vue实例使用。因为1,2局部过滤器，只能在当前实例中用
+	    //hello -> Hello
+	    Vue.filter("upperCase",function(val){
+	    	var one_word = val.substring(0,1).toUpperCase();
+	    	// console.log(val.substring(1));
+	    	return one_word+val.substring(1);
+	    });
+
+		new Vue({
+			el:"#app",
+			filters:{
+				//1.没参数，val 要过滤的数据,这现数字效果
+				number:function(val){
+					return val+".00";
+				},
+				//2.有参数的，val要过渡的数据，symbol表示货币符号
+				numberPro:function(val,symbol,num){
+					//$199.00,￥199.0
+					// return symbol+val+".00";
+					var new_val = val.toFixed(num);
+					return symbol+new_val;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

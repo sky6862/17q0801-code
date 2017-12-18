@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表达式</title>
+	
+</head>
+<style type="text/css">
+	.myclass{color: red;}
+	.footer{background: #666666;}
+</style>
+<body>
+	<div id="app">
+		<span v-html="html "></span>
+		<hr>
+		<span v-text="text" v-bind:class="content"></span>
+		<p v-once>{{two}}</p>
+		<img :src="img_url" alt="">
+		<hr>
+		<button v-on:click="show">点我</button>
+
+	</div>
+</body>
+<script src="js/vue.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				html:'<a href="vue1.html" title="">点我</a>',
+				text:'我要去北京',
+				content:'myclass',
+				two:'123321',
+				img_url:'img/yy.png'
+			},
+			methods:{
+				show:function(){
+					alert("123321");
+				},
+			}
+		});
+		
+		
+		
+	</script>
+</html>

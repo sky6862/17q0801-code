@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用slot（占位符）－做内容分发（定制）</title>
+	<style type="text/css" media="screen">
+		.pannel{
+			width:400px;
+			border:1px orange solid;
+		}
+
+		.pannel .header{
+			height: 45px;
+			background-color:green;
+			padding-left: 15px;
+		}
+
+		.pannel .body{
+			padding: 15px;
+		}
+
+		.pannel .footer{
+			height: 45px;
+			background-color:#666666;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<pannel>
+			<h1>pannel</h1>
+		</pannel>
+
+		<pannel>
+			pannel2
+		</pannel>
+		<hr>
+        <pannel2>
+        	<div slot="toubu">
+        		多个slot 头
+        	</div>
+        	<div slot="shenti">
+        		多个slot 身体
+        	</div>
+        	123
+        </pannel2>
+
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //单个slot
+		Vue.component("pannel",{
+			template:`
+				<div class="pannel">
+					<div class="header">
+					   <slot></slot>
+					</div>
+					<div class="body">body</div>
+					<footer>footer</footer>
+				</div>
+			`
+		});
+        
+        //带名字的 多个 slot
+		Vue.component("pannel2",{
+			template:`
+				<div class="pannel">
+					<div class="header">
+					   <slot name="toubu"></slot>
+					</div>
+					<div class="body">
+					   <slot name="shenti"></slot>
+					</div>
+					<footer>
+                       <slot></slot>
+					</footer>
+				</div>
+			`
+		});
+
+		new Vue({
+			el:"#app"
+		});
+	</script>
+</body>
+</html>

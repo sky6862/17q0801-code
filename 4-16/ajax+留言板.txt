@@ -1,0 +1,48 @@
+内容回顾:条件渲染-v-if-else-列表渲染-v-for-事件处理－vue小结
+1.vue实例，vue应用开始的地方， 
+ 	 vue实例基础属性：el,data,methods
+2.模板语法：vue标准在html语法
+  {{表达式}}输出内容，
+  插值：v-text,v-html,v-once
+3.属性绑定：v-bind:src="url"  缩写：:src="url"
+4.过滤器：格式化数据,是vue实例的属性之一
+5.计算属性：computed，是vue实例的属性之一
+6.监察属性：watch，是vue实例的属性之一
+7.条件渲染：v-if,v-else,v-else-if 可以结合 template 一起使用
+                  v－show
+8.列表渲染：v-for
+9.事件处理：v-on:click="functionname"
+   简写：@click="functionname"
+   事件修改符：stop,prevent,...
+
+今天内容:ajax+留言板-Q3登录接口使用
+
+一，ajax:页面局部更新，创建快速动态网页的技术。
+
+     ajax:实现方式
+
+Ａ：js:XMLHttpRequest对象
+Ｂ：jquery 方法（js XMLHttpRequest 方法的封装）
+$.ajax()，$.get(),$.post(),$.getJSON(),load() 加载html文件
+
+二，ajax 留言板
+
+要点：使用jquery中的ajax方法：$.ajax()，$.get(),$.post(),$.getJSON()）方法实现ajax请求
+               理解ajax实现的过程，前后端交互时与后端配合的模式
+               ajax中数组，json常用的方法使用
+
+目标：掌握ajax，前后端交互方法，接口文档的使用
+
+留言板流程(功能)：  注册->登录->留言/踩/顶/退出
+                            查看更多(不用登录)
+
+三，ajax-跨域请求:百单网Q3注册－登录接口使用
+
+
+***********************************************************
+实训项目：1.ajax 留言板:ajax实现
+   2.百单网Q3注册，登录，验证码 ajax实现
+***********************************************************
+下一篇:vue-表单-组件
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93
+

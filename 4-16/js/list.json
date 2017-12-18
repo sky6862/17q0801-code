@@ -1,0 +1,54 @@
+{
+    "status": 1,
+    "msg": "ok！",
+    "data": [
+        {
+            "cid": "7",
+            "uid": "3",
+            "content": "今天是个好天气----170525---6",
+            "dateline": "2017-05-25 09:27:37",
+            "support": "88",
+            "oppose": "12",
+            "username": "d0701"
+        },
+        {
+            "cid": "6",
+            "uid": "3",
+            "content": "今天是个好天气----170524---5",
+            "dateline": "2017-05-24 12:00:58",
+            "support": "88",
+            "oppose": "12",
+            "username": "d0701"
+        },
+        {
+            "cid": "5",
+            "uid": "2",
+            "content": "今天是个好天气----170524---4",
+            "dateline": "2017-05-24 12:00:31",
+            "support": "88",
+            "oppose": "12",
+            "username": "d0901"
+        },
+        {
+            "cid": "4",
+            "uid": "1",
+            "content": "今天是个好天气----170524---3",
+            "dateline": "2017-05-24 12:00:01",
+            "support": "88",
+            "oppose": "12",
+            "username": "d0801"
+        },
+        {
+            "cid": "3",
+            "uid": "1",
+            "content": "今天是个好天气----170524---2",
+            "dateline": "2017-05-24 11:59:13",
+            "support": "88",
+            "oppose": "12",
+            "username": "d0801"
+        }
+    ],
+    "username": "d0701",
+    "uid": "3",
+    "page_count": 2
+}

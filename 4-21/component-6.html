@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>非 父子组件 间通信-数据传输</title>
+</head>
+<body>
+	<div id="app">
+	   <my-div></my-div>
+	   <my-span></my-span>
+	</div>
+		
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //1.创建一个空Vue 实例，作为事件中转站
+        var bus = new Vue();
+
+		//定义2个组件
+		Vue.component("my-div",{
+			template:`
+ 				<h1>{{msg}}</h1>
+			`,
+			data:function(){
+				return {
+					msg:"loading child data..."
+				}
+			},
+			mounted:function(){
+				var vm = this;
+				//4.在组件中，使用 bus 监听自定义事件
+				//vue 绑定事件 $on("事件类型"，function(){//do })
+				bus.$on("recive-data-handle",function(data){
+					//注意：这里如果有this的话，指向的是bus，是空vue实例
+					//实际上，应该指向的是 当前的组件，所以在30行定义一个变量，
+					//指向一下:var vm = this;
+					console.log(this)
+					// this.msg = "data";
+					console.log(vm);//当前vue 实例
+					vm.msg = data;
+				});
+			}
+		});
+
+		Vue.component("mySpan",{
+			//2.在组中 A中 绑定事件 ，触发一个事件
+			template:`
+				<button type="button" @click="sendData">发送数据到其它组件</button>
+			`,
+			data:function(){
+				return {
+					span_data:'来自span的数据!'
+				}
+			},
+			methods:{
+				sendData:function(){
+					//3.触发一个自定义事件 ，发送数据
+					bus.$emit('recive-data-handle',this.span_data);
+				}
+			}
+		});
+
+		//创建Vue 实例
+		new Vue({
+			el:"#app"
+		});
+	</script>
+</body>
+</html>

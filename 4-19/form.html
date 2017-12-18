@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model 表单的数据绑定</title>
+</head>
+<body>
+
+	<div id="app">
+	    <!-- v-model 把数据绑定到一个元素上 -->
+		用户名:<input type="text" name="" v-model.lazy="username">
+		{{username}}
+		<hr>
+		留言:<textarea v-model="msg"></textarea>{{msg}}
+		<hr>
+		<!-- checked="checked" -->
+		爱好：<input type="radio" :checked="is_checked">(1 个radio 选中使用 :checked="is_checked",不用v-model)
+     －－{{is_checked}}－－
+		<br>
+		爱好2：
+			  <input type="radio" v-model="love2" value="swing">游泳
+			   <input type="radio" v-model="love2" value="singer">唱歌
+			   {{love2}}(多 个radio v-model 返回的是一个值)
+	    <hr>
+	    户外运动：<input type="checkbox" v-model="single_check">(单个复选框,返回的是true/false){{single_check}}
+	    <hr>
+	    户外运动2：<input type="checkbox" v-model="pashan" value="pashan">爬上，
+	    		   <input type="checkbox" v-model="pashan" value="tiaowu">跳舞,
+	    		   <input type="checkbox" v-model="pashan" value="biaoyan">表演
+				{{pashan}}
+		<hr>
+		<select name="" v-model="area">
+			<option value="-1">选择地区</option>
+			<option value="1">湖北</option>
+			<option value="2">河北</option>
+			<option value="3">湖南</option>
+			<option value="4">北京</option>
+		</select>
+		{{area}}
+		<hr>
+		<select name="" v-model="area2" multiple>
+			<option value="-1">选择地区</option>
+			<option value="1">湖北</option>
+			<option value="2">河北</option>
+			<option value="3">湖南</option>
+			<option value="4">北京</option>
+		</select>
+		{{area2}}
+		<hr>
+		<select name="" v-model="area3">
+			<option value="-1">选择地区</option>
+			<!-- <option value="1">湖北</option>
+			<option value="2">河北</option>
+			<option value="3">湖南</option>
+			<option value="4">北京</option> -->
+            <!-- <option  v-for="item in province" v-bind:value="item.id">{{item.name}}</option> -->
+            <option  v-for="item in province" :value="item.id">{{item.name}}</option>
+		</select>
+		<hr>
+		户外运动3：
+		<input type="checkbox" v-model="pashan3" v-bind:true-value="v1" v-bind:false-value="v1_n">爬山，
+	    		  <!--  <input type="checkbox" v-model="pashan3" value="tiaowu">跳舞,
+	    		   <input type="checkbox" v-model="pashan3" value="biaoyan">表演 -->
+	    val:{{pashan3}}
+		<!-- 
+        小结：v-model绑定表单数据
+              1.v-model 绑定单数据
+              2.默认选中项的设置,设置值就好
+              注意 ，radio,checkbox 一个的时候，组合使用的时候不同（组合的时候配合value一起使用）
+              3.动态给值:
+              4.修饰符:
+		 -->
+		 <hr>
+		 <!-- Number:<input type="text" v-model.number="age">{{age}} -->
+		  trim:<input type="text" v-model="age">{{age}}
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				// username:''//一定要定义
+				username:'jim goodmorning',
+				msg:"",
+				love:"1",
+				is_checked:false,//选中单选按钮
+				love2:"singer", //要选中哪个，就给 选中项 对应的值
+				single_check:true,
+				pashan:["tiaowu", "biaoyan"],  //多个复选框，结果是一个数组
+				area:"1",
+				area2:[],
+				area3:"2",
+				province:[
+					{"id":1,"name":"湖北"},
+					{"id":2,"name":"湖南"},
+					{"id":3,"name":"河北"},
+					{"id":4,"name":"河南"}
+				],
+				pashan3:[],
+				v1:"我要爬山了",
+				v1_n:"我不想爬山了",
+				age:""
+			}
+		});
+	</script>
+</body>
+</html>

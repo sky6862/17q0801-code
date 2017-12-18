@@ -1,0 +1,70 @@
+.middle .sub-nav dl{
+    text-align: left;
+}
+.middle .content .head-nav{
+    margin-bottom: 20px;
+}
+.middle .content .head-nav .setting{
+    margin-right: 18px;
+    margin-left: 50px;
+    color: #43aebe;
+}
+.middle .content .head-nav .setting:hover{
+    display: inline;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.middle label{
+    cursor: pointer;
+}
+.middle .head-nav label input,
+.middle .page label input{
+    width: 0;
+}
+
+.middle .head-nav label span,
+.middle .page label span{
+    padding-left: 19px;
+    vertical-align: top;
+    background: url(../images/system_message/check.jpg) left center no-repeat;
+}
+.middle .head-nav label input:checked + span,
+.middle .page label input:checked + span{
+    background: url(../images/system_message/checkA.jpg) left center no-repeat;
+}
+.middle .content ul{
+    border: 1px solid #ccc;
+    padding: 0 23px ;
+    margin-bottom: 26px;
+}
+
+
+.middle .page {
+    margin-right: 261px;
+    margin-top: 6px;
+}
+.middle .page a{
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 0 7px;
+    height: 23px;
+    line-height: 23px;
+    margin-top: -6px;
+    margin-right: 14px;
+    margin-left: 14px;
+}
+.middle .page {
+    text-align: center;
+}
+.middle .page a:hover{
+    text-decoration: none;
+}
+.middle .page .delete{
+    border-color: #eee;
+}
+.middle .page .on{
+    color: #43aebe;
+}
+.middle .page span b{
+    color: #43aebe;
+}

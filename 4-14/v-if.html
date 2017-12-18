@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染-v-if</title>
+</head>
+<body>
+	<div id="app">
+	     <!-- 1.对象形式 -->
+	     <p v-if="visible">999999999999999999</p>
+	     <hr>
+	     <p v-show="visible">888888888888888888</p>
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				visible:true
+			}
+		});
+	</script>
+</body>
+</html>

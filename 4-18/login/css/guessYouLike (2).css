@@ -1,0 +1,51 @@
+.guessYouLike{
+    margin-bottom: 176px;
+}
+.guessYouLike h3{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    padding-left: 21px;
+    background: url(../images/shop_list/guess.jpg) 2px center no-repeat;
+    margin-bottom: 18px;
+}
+.guessYouLike ul{
+    margin-right: -25px;
+}
+.guessYouLike li{
+    width: 202px;
+    height: 280px;
+    padding: 8px;
+    padding-bottom: 10px;
+    border: 1px solid #ccc;
+    margin-right: 25px;
+    float: left;
+}
+.guessYouLike p{
+    color: #333;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.guessYouLike img{
+    max-width: 202px;
+}
+.guessYouLike span{
+    font-size: 18px;
+    color: #ff3333;
+    line-height: 29px;
+    font-family: "微软雅黑";
+}
+.guessYouLike span i{
+    font-size: 14px;
+}
+.guessYouLike button{
+    background: #43aebe;
+    border: 1px solid #ccc;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    float: right;
+    cursor: pointer;
+}

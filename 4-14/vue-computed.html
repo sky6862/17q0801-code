@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue计算属性－复杂的运算</title>
+</head>
+<body>
+	<div id="app">
+	    <p>反转字符串：nice=>ecin</p>
+		<span>{{str.split("").reverse().join("")}}</span>
+		<hr>
+		<span>-->{{msg}}<--</span>
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				str:"nice",
+				name:"nice"
+			},
+			computed:{
+				//mss 定义一个新的变量，存要操作的数据，
+				//this.name 是要操作的数据，this代表当前的实例
+				msg:function(){
+					var arr = this.name.split("");//把字符串切割成一个数组
+					var new_arr = arr.reverse();//反序数组 [e,c,i,n]
+					var new_str = new_arr.join(""); //转为字符串
+					return new_str;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

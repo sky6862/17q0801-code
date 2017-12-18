@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on事件绑定/事件监听</title>
+</head>
+<body>
+	<div id="app">
+	     <h1>事件绑定，事件简写形式，事件修饰符，键盘事件：@keyup.enter=submit
+	     </h1>
+	     <button type="button" v-on:click="count=count+1">点击+1</button>
+	     <span>你点了{{count}}次</span>
+
+	     <hr>
+	     <!-- show事件处理函数括号可不写 -->
+	     <button type="button" v-on:click="show">点击+1</button>
+	     <span>你点了{{count}}次</span>
+
+         <hr>
+	     <button type="button" v-on:click="show()">点击+1</button>
+	     <span>你点了{{count}}次</span>
+
+	     <hr>
+	     <!-- <a href="javascript:;" title="" v-on:click="show_msg">点我登录</a> -->
+	     <a href="#" title="" v-on:click.prevent.stop="show_msg">点我登录1</a>
+	     <a href="#" title="" @click.prevent.stop="show_msg">点我登录2</a>
+    </div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:"#app",
+			data:{
+				count:0
+			},
+			methods:{
+				show:function(a){
+					this.count++;
+					console.log(event)//event 当前事件对象
+				},
+				show_msg:function(){
+					// event.preventDefault();
+					alert("login ok！");
+				}
+			}
+		});
+	</script>
+</body>
+</html>

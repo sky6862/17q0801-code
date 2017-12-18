@@ -1,0 +1,76 @@
+.guessYouLike > h3{
+    margin-bottom: 9px;
+}
+.guessYouLike .division{
+    margin-bottom: 23px;
+}
+.middle .head{
+    margin-top: 53px;
+    height: 44px;
+    margin-bottom: 17px;
+}
+.middle .head .title{
+    height: 44px;
+    line-height: 44px;
+    background: url(../images/shop_cart/car.jpg) 1px center no-repeat;
+    padding-left: 33px;
+    font: 18px/44px "微软雅黑";
+    color: #333;
+}
+.middle .head .head-bar li{
+    width: 130px;
+    float: left;
+    font: 14px "微软雅黑";
+    color: #333;
+    text-align: center
+}
+.middle .head .head-bar .box{
+    position: relative;
+    padding: 8px 0;
+}
+.middle .head .head-bar .bar{
+    width: 130px;
+    height: 8px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.middle .head .head-bar .radio{
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    left: 50%;
+    margin-left: -12.5px;
+    top: 0;
+    border-radius: 50%;
+    line-height: 23px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.middle .head .head-bar .on .radio{
+    background-color: #43aebe;
+    color: #fff;
+    border-color: #43aebe;
+}
+.middle .head .head-bar .on .bar{
+    background-color: #43aebe;
+    border-color: #43aebe;
+    border-left: none !important;
+    border-right: none !important;
+}
+.middle .head .head-bar .active p{
+    color: #43aebe;
+}
+.middle .head .head-bar .first .bar{
+    border-left: 1px solid #ccc;
+}
+.middle .head .head-bar .last .bar{
+    border-right: 1px solid #ccc;
+}
+.guessYouLike{
+    margin-top: 73px;
+}
+.foot-left{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}

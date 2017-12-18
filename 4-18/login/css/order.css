@@ -1,0 +1,191 @@
+.middle .content{
+    width: 1050px; 
+    font: 14px "微软雅黑";
+    color: #333;
+    margin-bottom: 143px;
+}
+.middle .content h1{
+    height: 40px;
+    line-height: 40px;
+    text-indent: 24px;
+    background-color: #fff;
+}
+.middle .content .box{
+    padding: 14px 23px 53px 23px;
+    background: #fff;
+    margin-top: 18px;
+}
+.middle .content .search{
+    float: right;
+    margin-right: -13px;
+}
+.middle .content .search input{
+    border: 1px solid #ccc;
+    border-right: none;
+    padding-left: 7px;
+    padding-right: 5px;
+    height: 23px;
+    line-height: 23px;
+    width: 197px;
+}
+.middle .content .search button{
+    border: none;
+    background: #43afbc;
+    color: #fff;
+    height: 25px;
+    line-height: 25px;
+    width: 50px;
+    text-align: center;
+}
+.middle .content .search button:focus{
+    outline: none;
+    cursor: pointer;
+}
+.middle .content .top-nav span{
+    height: 25px;
+    line-height: 25px;
+    padding: 0 3px;
+    margin-right: 26px;
+    position: relative;
+    cursor: pointer;
+}
+.middle .content .top-nav i{
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    background-color: #43afbc;
+    color: #fff;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+}
+.middle .content .top-nav a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid #43afbc;
+}
+.middle .content .top-nav .on{
+    border-bottom: 2px solid #43afbc;
+}
+.middle .content .top-nav{
+    margin-bottom: 24px;
+}
+.thead{
+    height: 40px;
+    line-height: 40px;
+    background-color: #eee;
+}
+.thead h2{
+    margin-left: 30px;
+}
+.thead img{
+    vertical-align: 3px;
+    margin-left: 8px;
+}
+.thead h2 + span{
+    margin-left: 144px;
+    margin-right: 281px;
+}
+.thead span + span{
+    margin-right: 58px;
+}
+.tbody .item{
+    margin: 31px 0;
+    border: 1px solid #ccc;
+}
+.tbody .item > p:first-child{
+    height: 29px;
+    line-height: 29px;
+    text-indent: 28px;
+    background-color: #eee;
+    width: 100%;
+}
+.tbody .item p:first-child span{
+    padding-left: 34px;
+}
+.tbody .item .info{
+    padding: 9px;
+    padding-right: 0;
+    width: 540px
+}
+
+.tbody .item > div{
+    float: left;
+}
+.tbody .item > div + div{
+    height: 118px;
+    width: 112px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+}
+.tbody .item .table{
+    height: 118px;
+}
+.tbody .item .info img{
+    width: 118px;
+    height: 98px;
+    border: 1px solid #ccc;
+}
+.tbody .item .info p{
+    padding: 16px;
+    height: 68px;
+    width: 200px;
+}
+.tbody .item .info{
+    border-top: 1px solid #ccc;
+}
+.tbody .item .info:first-child{
+    border-top: none;
+}
+.tbody .item .info .num{
+    display: inline-block;
+    width: 73px;
+    text-align: center;
+    line-height: 100px;
+    color: #999;
+}
+.tbody .item .info p ~ p{
+    width: 115px;
+    height: 100px;
+    padding: 0;
+    float: left;
+    line-height: 100px;
+    text-align: center;
+}
+.tbody .item .state{
+    color: #999;
+}
+.tbody .item .sm-font p:first-child{
+    margin-bottom: 16px;
+}
+.tbody .item > p + div{
+    width: 549px;
+}
+.middle .bottom-nav {
+    text-align: center;
+}
+.middle .bottom-nav a{
+    display: inline-block;
+    width: 48px;
+    height: 23px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.middle .bottom-nav a:hover{
+    text-decoration: none;
+}
+.middle .bottom-nav .on{
+    border-color: #43afbc;
+}
+.middle .bottom-nav b{
+    color: #43afbc;
+}
+.middle .bottom-nav span{
+    font-size: 12px;
+    margin: 0 14px;
+}

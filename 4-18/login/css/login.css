@@ -1,0 +1,118 @@
+
+.header .top_content{
+    height: auto;
+}
+.middle{
+    background: #f0f0f0;
+}
+.middle .box{
+    border: 1px solid #e9e9e9;
+    background: #fff;
+    padding: 90px 0;
+}
+.middle .container{
+    padding: 78px 0;
+}
+.middle .left{
+    padding: 58px 125px 92px 115px;
+    width: 500px;
+}
+.middle .left img{
+    width: 500px;
+    height: 300px;
+}
+.middle .right{
+    width: 290px;
+    padding: 60px 54px;
+    border: 1px solid #ccc;
+}
+.header .top_content .container{
+    height: 99px;
+}
+.middle .right .title{
+    margin-bottom: 46px;
+}
+.middle .right .title span:first-child{
+    color: #333;
+    font: 14px "微软雅黑";
+    margin-right: 100px;
+}
+.middle .right .title span + span{
+    color: #666;
+    font-size: 12px;
+}
+.middle .right .title span + span a{
+    color: #43aebe;
+}
+.middle .right .input{
+    margin-bottom: 25px;
+}
+.middle .right .input label{
+    font-size: 12px;
+    color: #333;
+    display: inline-block;
+    width: 40px;
+}
+.middle .right .input input{
+    width: 243px;
+    height: 33px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+.middle .right .remember{
+    font-size: 12px;
+    color: #333;
+    margin-left: 40px;
+}
+.middle .right .remember input{
+    vertical-align: middle;
+    display: none;
+}
+.middle .right .remember label{
+    padding-left: 22px;
+    background: url(../images/login/icon.jpg) left center no-repeat;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+}
+.middle .right .remember input:checked + label {
+    background: url(../images/login/iconA.jpg) left center no-repeat;
+}
+.middle .right .remember a{
+    color: #43aebe;
+    margin-left: 116px;
+}
+.middle .right .btn{
+    margin-left: 40px;
+}
+.middle .right .btn a{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    background-color: #43aebe;
+    color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin: 15px 0;
+}
+.middle .right .btn a:hover{
+    text-decoration: none;
+}
+.middle .right dl{
+    margin-left: 40px;
+}
+.middle .right dt{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+}
+.middle .right dd{
+    float: left;
+    margin-right: 30px;
+}
+.footer .bottom{
+    padding-top: 27px;
+}

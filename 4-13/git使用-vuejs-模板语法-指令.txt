@@ -1,0 +1,98 @@
+内容回顾:query优化-vuejs基础
+今天内容:git使用-vuejs-模板语法-指令
+
+一，git使用
+
+github.com
+
+A:基本设置
+
+1.注册
+2.登录
+3.创建仓库
+
+B：上传项目到github
+
+1.安装一个git客户端
+     https://git-for-windows.github.io/
+
+2.复制项目到本地（1次）
+先进入到本地项目存放的文件夹。
+git bashhere
+git clone https://github.com/sky6862/17q0801-code.git
+git clone  git地址
+
+3.切换到 复制的项目 文件夹里面去
+
+
+4.向项目里面添加文件
+
+把相关的文件复制到项目的文件夹里面，执行如下命令：
+git add ./文件名 或 ./目录名
+
+5.把项目提交到本地仓库
+git commit -m "说明信息"
+
+6.把本地文件同步到线上github
+
+git push -u origin master（第1次把本地的内容添加到github需要-u 参数，后面不需要）
+
+git push origin master  Git会  把master分支推送到远程库对应的远程分支上
+    （从现在起，只要本地作了修改(添加，删除，修改，后退)，就可以通过 git push origin master 把本地的内容，同步更新到github） origin 是远程主分支的名字，master 是本地库主分支的名字，注意!
+
+7.从远程服务器上更新别人上传的文件：git fetch/git pull  （svn更新）
+
+1.使用git fetch更新，相当于是从远程获取最新版本到本地，不会自动merge
+
+git fetch origin master  
+git log -p master..origin/master  
+git merge origin/master 
+ 
+首先从远程的origin的master主分支下载最新的版本到origin/master分支上
+然后比较本地的master分支和origin/master分支的差别
+最后进行合并
+
+上述过程其实可以用以下更清晰的方式来进行:
+
+git fetch origin master:tmp  
+git diff tmp   
+git merge tmp  
+
+从远程获取最新的版本到本地的tmp分支上
+之后再进行比较合并
+
+2.使用git pull 更新，相当于是从远程获取最新版本并merge到本地
+
+git pull origin master  
+
+上述命令其实相当于git fetch 和 git merge
+在实际使用中，git fetch更安全一些
+因为在merge前，我们可以查看更新情况，然后再决定是否合并
+
+
+小结：
+1.添加，删除，修改，后退，都要执行4，5，6.
+2.更新：7
+
+项目仓库：https://github.com/sky6862/17q0801-code.git
+
+参考：
+https://jingyan.baidu.com/article/f7ff0bfc7181492e27bb1360.html
+http://www.runoob.com/w3cnote/git-guide.html
+
+fork:复制别人的仓库
+更新最新仓库到自己的fork:http://blog.csdn.net/qq1332479771/article/details/56087333
+
+二，vuejs-模板语法-指令-过滤器
+
+常用指令：{{表达式}}，v-text,v-html,v-bind,v-once 使用
+
+vuejs:https://cn.vuejs.org/
+ http://www.runoob.com/vue2/vue-tutorial.html
+
+***********************************************************
+实训项目：1.git使用-vuejs-模板语法-指令
+                 2.百单网Q3实现
+***********************************************************
+下一篇:过渡器-计算属性-watched 属性-样式绑定－条件列表渲染
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93

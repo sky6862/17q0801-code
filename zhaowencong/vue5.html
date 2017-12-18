@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+	<style type="text/css" media="screen">
+		.s{
+			font-size: 50px;
+		}
+		.color{
+			color: red;
+		}
+		.size{
+			font-size: 80px;
+		}
+		.color1{
+			color:green;
+		}
+		.size1{
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<span v-bind:class="{'s':aa}">家分店抗裂砂浆弗兰克</span>
+		<hr>
+		<p v-bind:class="{'color':bb,'size':cc}">峰会上房间看风景</p>
+		<hr>
+		<div v-bind:class="[class1,class2]">
+			数组方式添加class
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				aa:true,
+				bb:true,
+				cc:true,
+				class1:"color1",
+				class2:"size1"
+			}
+		})
+	</script>
+</body>
+</html>
