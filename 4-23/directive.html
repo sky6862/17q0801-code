@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义指令-指令选项</title>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<input type="text" name="username" v-focus="1+1">
+		<hr>
+		<!-- :10 10是参数的值 
+			 .is_show.is_open 修饰符
+		-->
+		<input type="text" name="email" v-focus:10.is_show.is_open="num"> 
+		<hr>
+		<input type="text" name="email" v-focus2:10.is_show.is_open="num"> 
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //当页面加载完成时 ，让元素获得焦点
+	    //定义指令的时候，不要写 v- 前缀，使用的时候，要写
+
+	    //全局指令
+	    Vue.directive("focus",{
+	    	//当元素插入页面时执行
+	    	//el:使用指令的元素
+	    	inserted:function(el,binding){
+	    		console.log(el,binding);
+	    		el.focus();//获取焦点
+	    		el.style.border=binding.arg+"px solid red";//取参数 arg
+	    	}
+	    });
+
+		new Vue({
+			el:"#app",
+			data:{
+				num:1
+			},
+			//创建局部指令
+			directives:{
+				focus2:{
+					inserted:function(el,binding){
+			    		console.log(el,binding);
+			    		el.focus();//获取焦点
+			    		el.style.border=binding.arg+"px solid red";//取参数 arg
+	    			}
+				}
+			}
+		});
+	</script>
+</body>
+</html>

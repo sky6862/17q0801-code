@@ -1,0 +1,100 @@
+内容回顾:组件其它选项-动画
+今天内容:动画-自定义class类名-混合-自定义指令-插件使用
+
+一，动画-自定义class类名
+
+是在transition组件上自定义class 类名。也可以结合animate.css一起配合使用。
+animate.css 动画样式：http://www.dowebok.com/demo/2014/98/
+<transition 
+		name="custom-classes-transition"
+		enter-active-class="animated rotateIn"
+		leave-active-class="animated rotateOut">
+
+		<div id="box" v-show="is_show">
+				动起来
+	        </div>
+</transition>
+
+
+
+
+动画小结：
+   过渡效果:
+   动画：
+   自定义class类名+animate.css
+
+二,混合:混合 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混合对象可以包含任意组件选项。当组件使用混合对象时，所有混合对象的选项将被混入该组件本身的选项。
+
+1.基础用法
+// 定义一个混合对象
+var myMixin = {
+  created: function () {
+    this.hello()
+  },
+  methods: {
+    hello: function () {
+      console.log('hello from mixin!')
+    }
+  }
+}
+
+// 定义一个使用混合对象的组件
+var Component = Vue.extend({
+  mixins: [myMixin]
+})
+
+var component = new Component() // => "hello from mixin!"
+
+2.选项合并
+当组件和混合对象含有同名选项时，这些选项将以恰当的方式混合。比如，同名钩子函数将混合为一个数组，因此都将被调用。另外，混合对象的 钩子将在组件自身钩子 之前 调用 。
+
+值为对象的选项，例如 methods, components 和 directives，将被混合为同一个对象。两个对象键名冲突时，取组件对象的键值对。
+
+三，自定义指令：实现自己的指令，实现dom操作，集成第3方插件，扩展html功能。
+
+1).指令功能：
+
+1.自定义指令是用来操作DOM的。尽管Vue推崇数据驱动视图的理念，但并非所有情况都适合数据驱动。自定义指令就是一种有效的补充和扩展，不仅可用于定义任何的DOM操作，并且是可复用的。
+2.指令的第2用处是用于集成第三方插件。
+
+ 2).vuejs中的的指令：可参考api:https://cn.vuejs.org/v2/api/ 指令部分。
+  ● 指令
+      ○ v-text
+      ○ v-html
+      ○ v-show
+      ○ v-if
+      ○ v-else
+      ○ v-else-if
+      ○ v-for
+      ○ v-on
+      ○ v-bind
+      ○ v-model
+      ○ v-pre
+      ○ v-cloak
+      ○ v-once
+
+3).自定义指令：
+
+基本：
+1.全局：Vue.directive("name",{
+//钩子函数
+});
+
+2.局部：
+...
+directives:{
+     name:{
+//钩子函数
+}
+}
+...
+
+1.几个钩子函数：bind,inserted,update,componentUpdated,unbind
+2.钩子函数的参数: el、binding、vnode  、oldVnode
+
+***********************************************************
+实训项目：1.动画-自定义class类名-自定义指令-混合 实例练习
+   2.Q3 手机app
+***********************************************************
+下一篇: vuejs插件-ajax插件-路由
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93

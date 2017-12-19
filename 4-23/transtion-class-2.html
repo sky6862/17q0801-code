@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画：自定义动画class+animate.css</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css">
+	<style type="text/css" media="screen">
+		#box{
+			width: 300px;
+			height: 100px;
+			background-color:orange;
+		}
+        
+        /*用animate.css 的动画类*/
+        /*自定义 进入时动画*/
+		/* .scale_in{
+			animation:scale_div 2s;
+		} */
+        
+        /*自定义 离开时动画*/
+		/* .scale_out{
+			animation:scale_div 2s reverse;
+		}
+		
+		@keyframes scale_div{
+			0%{
+				transform:scale(1);
+			}
+			50%{
+				transform: scale(1.5)
+			}
+			100%{
+				transform: scale(2)
+			}
+		} */
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button type="button" @click="show">动起来1</button>
+		<button type="button" v-on:click="show">动起来2</button>
+
+		<transition 
+			name="custom-classes-transition"
+		    enter-active-class="animated rotateIn"
+		    leave-active-class="animated rotateOut">
+			<div id="box" v-show="is_show">
+				动起来
+			</div>
+		</transition>
+		
+	</div>
+	 
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+		
+		new Vue({
+			el:"#app",
+			data:{
+				is_show:false
+			},
+			methods:{
+				show:function(){
+					this.is_show = !this.is_show;
+				}
+			}
+
+		});
+	</script>
+</body>
+</html>

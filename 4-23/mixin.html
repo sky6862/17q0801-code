@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>混合（mixin）:复用组件中的代码</title>
+	<style type="text/css" media="screen">
+		.dialog{
+			width:400px;
+			height: 200px;
+			background-color:orange;
+			text-align: center;
+			line-height: 200px;
+			position: absolute;
+			left:50%;
+			top:50%;
+			margin-left: -200px;
+			margin-top:-100px; 
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<dropdown-menu></dropdown-menu>
+		<my-dialog></my-dialog>
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	    //定义一个混合对象，把组件公共的部分提取出来
+	    var mixin_obj = {
+	    	//vue创建完成时的钩子
+	    	created:function(){
+                console.log('mixmin 钩子...');
+	    	},
+	    	data:function(){
+				return {
+					is_show:false,
+					is_true:true//定义公共数据
+				}
+			},
+			methods:{
+				show:function(){
+					this.is_show = !this.is_show;
+				}
+			}
+	    };
+
+		new Vue({
+			el:"#app",
+			components:{
+				"dropdownMenu":{
+					template:`
+					<div>
+						<button type="button" v-on:click="show">展开/隐藏</button>
+						<div v-show="is_show">
+							menu list
+						</div>
+					</div>
+					`,
+					mixins:[mixin_obj] //使用自定义的混合对象
+					/*data:function(){
+						return {
+							is_show:false
+						}
+					},
+					methods:{
+						show:function(){
+							this.is_show = !this.is_show;
+						}
+					}*/
+				},
+				"myDialog":{
+					//定义一个自己的钩子函数，当组件 created 完成时调用
+					created:function(){
+						console.log('dialog 钩子！');
+					},
+					template:`
+						<div>
+							<button type="button" v-on:click="show">show/hide-dialog</button>
+							<div class="dialog" v-show="is_show">
+	                              my name is dialog！
+							</div>
+						</div> 
+					`,
+					mixins:[mixin_obj],
+					/*data:function(){
+						return {
+							is_show:false
+						}
+					},
+					methods:{
+						show:function(){
+							this.is_show = !this.is_show;
+						}
+					}*/
+					data:function(){
+						return {
+							is_true:false
+						}
+					},
+					mounted:function(){
+						//当组件中与混合的对象 有同名的数据(data,methods,computed)的时候，会用组自自己的
+						console.log(this.is_true);//false
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>
