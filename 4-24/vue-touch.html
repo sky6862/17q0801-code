@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-touch</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+</head>
+<body>
+	<div id="app">
+		<a href="#" title="" @click="show">click-1</a>
+		<hr>
+		<!-- 
+          v-touch 来包含元素，会生成div
+          在 v-touch 上用 v-on:事件类型="事件函数" 做事件处理
+		 -->
+		<v-touch style="width: 100px; height: 100px; background: #ff00ff;"
+				 v-on:tap="test">
+				 click-2
+		</v-touch>
+
+		<v-touch style="width: 100px; height: 100px; background: orange;"
+				 v-on:swipeleft="test">
+				 swipeleft->左滑动
+		</v-touch>
+	</div>
+	
+	<script type="text/javascript" src="js/vue.js"></script>
+	<!--1.先引入hammer.js -->
+	<script type="text/javascript" src="js/hammer.js"></script>
+	<!--2.引入 vue-touch.js -->
+	<script type="text/javascript" src="js/vue-touch.js"></script>
+	<script type="text/javascript">
+		//3.注册插件(不用use)
+		//var VueTouch = require('vueTouch');
+		//Vue.use(VueTouch);
+
+		new Vue({
+			el:"#app",
+			methods:{
+				show:function(){
+					alert('hello everyone！')
+				},
+				test:function(){
+					alert('hello vue-touch！')
+					console.log(event);
+				}
+			}
+		})
+	</script>
+
+</body>
+</html>

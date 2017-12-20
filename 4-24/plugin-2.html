@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义插件:添加Vue 全局方法-属性</title>
+</head>
+<body>
+	<div id="app">
+	    <button @click="show">调用Vue方法</button>
+    </div>
+
+	<!-- 引入vuejs -->
+	<script type="text/javascript" src="js/vue.js"></script>
+	<!-- 1.引入插件js -->
+	<script type="text/javascript" src="js/Vue_Extends.js"></script>
+
+	<script type="text/javascript">
+		// import service_plugin from './js/service.js' es6
+		// console.log(obj_2)
+
+		//2.注册插件
+		Vue.use(obj_2); 
+
+		//任意地方都可以用，因为是全局
+		Vue.test();
+
+		new Vue({
+			el:"#app",
+			methods:{
+				show:function(){
+					// this.test();
+					//3.调用方法
+					Vue.test();
+				}
+			}
+		});
+	</script>
+</body>
+</html>

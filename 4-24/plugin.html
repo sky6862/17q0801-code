@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义插件:添加Vue实例方法-属性</title>
+</head>
+<body>
+	<div id="app">
+	    {{num}}
+	    <button @click="double">点击后让左边的数字翻倍</button>
+	    {{name}}
+    </div>
+
+	<!-- 引入vuejs -->
+	<script type="text/javascript" src="js/vue.js"></script>
+	<!-- 1.引入插件js -->
+	<script type="text/javascript" src="js/service.js"></script>
+
+	<script type="text/javascript">
+		// import service_plugin from './js/service.js'
+		// console.log(service_plugin);
+		// console.log(obj_1)
+
+		//2.注册插件
+		Vue.use(obj_1); 
+		// Vue.doubleNumber(3);
+
+		new Vue({
+			el:"#app",
+			data:{
+				num:1,
+				username:this.name//调用了插件中的一个属性name
+			},
+			methods:{
+				double:function(){
+					//3.直接调用 插件中的方法，使用插件
+					this.num = this.doubleNumber(this.num);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
