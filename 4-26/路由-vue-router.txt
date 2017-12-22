@@ -1,0 +1,46 @@
+内容回顾:vuejs-单文件组件
+内容提要:路由-vue-router-其它工具-axios-ui框架
+ 
+测试项目：
+    使用vue-cli 创建/开发的项目（项目中有package.json文件时候），运行方式：
+　　　1.进入项目所在的文件夹，安装项目的依赖
+               cd /myapp-3
+　　　　　cnpm install　　　　（执行1次）
+         2.预览
+　　　　　npm run dev 　编译项目，查看效果　（开发时常用）
+　　　3.发布
+　　　　　npm run build  编译项目，上线用的
+
+　　内容：nodej,npm，vue-cli 安装
+　　　　　使用vue-cli(webpack) 使用单文件组件　*.vue
+
+今天内容:路由-vue-router-其它工具-axios
+
+
+一，vue-router
+路由：可以理解为url,导航，地图，说明怎么访问一个资源的规则。Vue.js 路由允许我们通过不同的 URL 访问不同的内容，以实现多视图的单页Web应用（single page web application，SPA）。
+eg: http://music.163.com/#/discover/toplist
+
+中文文档：https://router.vuejs.org/zh-cn/
+  http://www.runoob.com/vue2/vue-routing.html
+1.安装
+2.使用
+3.结合单文件组件
+
+以下内容待续：
+
+二，其它工具
+   1.ajax工具：axios
+
+三，ui框架
+　1.Mint UI/Weex/VUWE
+　2.iview:https://www.iviewui.com/
+  Element: http://element.eleme.io/#/zh-CN
+
+***********************************************************
+实训项目：1.vue-route-单文件组件
+  	       2.Q3 手机app
+   3.预习：路由
+***********************************************************
+下一篇: 其它工具-axios-ui框架
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93

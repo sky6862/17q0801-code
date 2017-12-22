@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-router－基础用法－直接引入方式</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+	
+	<div id="app">
+	   <h2>welcome vue-router demo</h2>
+		<!-- <a href="/foo" title="">foo</a>
+		<a href="/bar" title="">bar</a> -->
+		<!-- 1.路由地址 
+　　　　　　/　表示根目录
+　　　　　　/foo
+		-->
+		<router-link to="/foo">foo</router-link>
+		<router-link to="/bar">bar</router-link>
+        
+        <hr>
+		<!-- 2.路由　内容存放的地方 -->
+		<router-view></router-view>
+
+	</div>
+	<script type="text/javascript">
+	    //3.路由对应的页面(看成是一个组件)
+	    var pageA = {template:"<div>foo</div>"};
+	    var pageB = {template:"<div>bar</div>"};
+
+		//4.创建路由规则
+		var router_rule = [
+			{"path":"/foo",component:pageA},
+			{"path":"/bar",component:pageB}
+		];
+
+		//5.创建路由实例
+		var router = new VueRouter({
+			//routes属性指定这个路由实例使用的路由规则
+			routes:router_rule
+		});
+
+		//6.把当前的路由对象，挂载到一个Vue　实例上
+        new Vue({
+        	// el:"#app",
+        	// router:router
+        	router //简写
+        }).$mount("#app");//$mount("#app")　链接写法，手动挂载Ｖue实例
+
+	</script>
+
+</body>
+</html>
