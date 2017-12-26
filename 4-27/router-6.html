@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>命名路由</title>
+</head>
+<body>
+	<!-- /user/user_center/profile   
+		 /user/user_center/posts
+	-->
+	<div id="app">
+		<h1>命名路由</h1>
+		<!-- <a href="user_center" title="">用户中心</a> -->
+		<router-link to="/">首页</router-link>
+		<!-- 通过　绑定　:to={name:"名称"}　
+　　　　　　  params:{} 传递参数
+		-->
+		<router-link :to="{name:'toLogin',params:{uid:1}}">登录</router-link>
+        <button type="button"　v-on:click="login_page">点我登录</button>
+        <button type="button"　v-on:click="back_url">返回</button>
+
+
+        <!-- 同时加载多个视图，router-view 没有指定名字，名字是default -->
+		<router-view></router-view>
+		<router-view name="content"></router-view>
+		<router-view name="footer"></router-view>
+
+	</div>
+   
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+　　
+　　<script>
+        //路由对应的模板/组件：用户中心
+		var Index = {
+			template:`
+			<div class="my_profile">
+				来到首页!
+			</div>  
+			`
+		}
+        
+        var Login = {
+        	template: `
+				<h2>登录-Id:{{$route.params.uid}}</h2>
+        	`, 
+        }
+        
+        //公公组件
+        var　Header = {
+        	template:`
+              <div id="header">头部</div>
+        	`
+        }
+
+        var Footer = {
+        	template:`
+              <div id="header">底部</div>
+        	`
+        }
+
+        //1.规则
+	    var routes_rule = [
+	    	{
+	    		path:"/login/:uid",
+	    		// component:Login
+	    		components:{
+	    			default:Header,
+	    			content:Login,
+	    		},
+	    		name:"toLogin"//指定路由名称
+	    	},
+	    	{
+				path:"/",
+	    		// component:Index 视图名字对应的组件(模板)
+
+	    		name:"toIndex",//指定路由名称
+	    		components:{
+	    			default:Header,
+	    			content:Index,
+	    			footer:Footer
+	    		}
+	    	},
+	    	{
+	    		path:"*",
+	    		redirect:"/" //没有路由，到首页
+	    	}
+	    ]
+　　　　　
+		//2.创建一个路由
+		var routes = new VueRouter({
+			routes:routes_rule
+		})
+
+		//3.把路由挂到Vue实例上去
+		new Vue({
+			el:"#app",
+			router:routes,
+			methods:{
+				login_page:function(){
+					this.$router.push({name:"toLogin",params:{"uid":2}});
+				},
+				back_url:function(){
+					this.$router.go(-1);//go（） 同原生history.go() 方法
+				}
+			}
+		});
+      
+	</script>
+
+</body>
+</html>

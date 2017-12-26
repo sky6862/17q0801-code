@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>axios</title>
+</head>
+<body>
+	
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="js/axios.js"></script>
+	<script type="text/javascript">
+		var result = axios.get("https://api.github.com1/");//json
+		// console.log(result)
+		//jquery中success(),ajax 成功时调用
+		result.then(function(response){
+			console.log(response)
+			var data =response.data;
+			console.log(data) 
+		});
+        //jquery中error(),ajax 不成功时调用
+        result.catch(function(response){
+        	console.log('error！')
+        });
+
+	</script>
+</body>
+</html>

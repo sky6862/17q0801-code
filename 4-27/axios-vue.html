@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>axios</title>
+	<style type="text/css" media="screen">
+		[v-cloak]{display: none}
+	</style>
+</head>
+<body>
+	
+	<div id="app" v-cloak>
+		{{123}}
+		<ul>
+			<li v-for="item in list">{{item}}-1</li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="js/axios.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				// list:[{"name":"zhansang"},{"name":"lisi"}]
+				// list:{"url_1":"http:baidu.com","url_2":"http:baidu.com"}
+				// list:this.getData()
+				list:''
+			},
+			// computed:{
+			// 	list:function(){
+			// 		// return this.getData();
+			// 		axios.get("https://api.github.com")
+			// 		.then(function(response){
+			// 			console.log(1,response.data)
+			// 			return response.data;
+			// 		})
+			// 		.catch(function(response){
+			// 			console.log(2,response)
+			// 			return '';
+			// 		});
+			// 	}
+			// },
+			methods:{
+				//1.定义一个函数，完成数据获取
+				getData:function(){
+					var vm = this;
+					axios.get("https://api.github.com")
+					.then(function(response){
+						console.log(1,response.data)
+						return vm.list = response.data;
+					})
+					.catch(function(response){
+						console.log(2,response)
+						return vm.list='';
+					});
+				}
+			},
+			mounted:function(){
+				/*var vm = this;
+				axios.get("https://api.github.com")
+				.then(function(response){
+					console.log(1,response.data)
+					return vm.list = response.data;
+				})
+				.catch(function(response){
+					console.log(2,response)
+					return vm.list='';
+				});*/
+				// 2.vue 实例创建好后，再挂载数据
+				this.getData();
+			}
+		});
+
+	</script>
+</body>
+</html>

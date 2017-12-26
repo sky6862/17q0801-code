@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+	<style type="text/css" media="screen">
+		table td{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="app">
+		<h1>我的购物车</h1>
+		<table class="table table-bordered">
+			<tr>
+				<td>
+				<input type="checkbox" name="checkAll">全选/取消 ID</td>
+				<td>名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>小计</td>
+				<td>管理</td>
+			</tr>
+
+			<tr v-for="item in list">
+				<td><input type="checkbox" name="product" v-bind:value="item.id">{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<!-- ￥1999.00 -->
+				<td>{{item.price|cash}}</td>
+				<td><input type="text" name="number" v-bind:value="item.num"></td>
+				<td>{{item.total_price|cash}}</td>
+				<td><button type="button" class="btn btn-info btn-md" v-on:click="del($event,item.id)">删除</button></td>
+			</tr>
+
+			<!-- <tr>
+				<td>1</td>
+				<td>名称１</td>
+				<td>￥1999.00</td>
+				<td><input type="text" name="number" value="1"></td>
+				<td>￥3998.00</td>
+				<td><button type="button" class="btn btn-info btn-md">删除</button></td>
+			</tr>-->
+
+			<tr>
+				<td colspan="6" class="text-right">总共{{pro_total_num}}件商品，共{{pro_total_price|cash}}</td>
+			</tr>
+		</table>
+	</div>	
+    
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/axios.js"></script>
+	<script type="text/javascript">
+	    //定义全局过器，格式单价，小计
+	    Vue.filter("cash",function(value){
+	    	return "￥"+value+".00";
+	    });
+
+		new Vue({
+			el:"#app",
+			data:{
+				list:""
+			},
+			methods:{
+				getData:function(){
+					var vm = this;//当前Vue实例
+					//ajax取数据
+					axios.get("list.json")
+					.then(function(result){
+						console.log(result.data)
+						return vm.list = result.data;
+					})
+					.catch(function(error){
+						return vm.list = ""
+						console.log(error)
+					});
+				},
+				//删除:就是移走数组中，指定下标的元素
+				del:function($event,id){
+					// alert(id)
+					var pro_list = this.list;
+
+					for (var k in pro_list) {
+						if(id==pro_list[k].id){
+							this.list.splice(k,1);//Ｖue 中数据是响应式的，数据变了，页面也会变
+						}
+					}
+				}
+			},
+			mounted:function(){
+				// this.getData();//列表数据
+				this.getData();
+			},
+			computed:{
+				//总数
+				pro_total_num:function(){
+					var num = 0;
+					if(this.list){
+						num = this.list.length;//数量＝数组长度
+					}
+					return num;
+				},
+				//总价
+				pro_total_price:function(){
+					//把每个产品的小计累加
+					var pro_list = this.list;
+					var total_p = 0;
+					for (var k in pro_list) {
+						total_p += pro_list[k].total_price;
+					}
+					return total_p;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

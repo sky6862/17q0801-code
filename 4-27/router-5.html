@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>命名视图</title>
+</head>
+<body>
+	<!-- /user/user_center/profile   
+		 /user/user_center/posts
+	-->
+	<div id="app">
+		<h1>命名视图</h1>
+		<!-- <a href="user_center" title="">用户中心</a> -->
+		<router-link to="/">首页</router-link>
+		<router-link to="/login">登录</router-link>
+        
+        <!-- 同时加载多个视图，router-view 没有指定名字，名字是default -->
+		<router-view></router-view>
+		<router-view name="content"></router-view>
+		<router-view name="footer"></router-view>
+
+	</div>
+   
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+　　
+　　<script>
+        //路由对应的模板/组件：用户中心
+		var Index = {
+			template:`
+			<div class="my_profile">
+				来到首页!
+			</div>  
+			`
+		}
+        
+        var Login = {
+        	template: `
+				<h2>登录</h2>
+        	`, 
+        }
+        
+        //公公组件
+        var　Header = {
+        	template:`
+              <div id="header">头部</div>
+        	`
+        }
+
+        var Footer = {
+        	template:`
+              <div id="header">底部</div>
+        	`
+        }
+
+        //1.规则
+	    var routes_rule = [
+	    	{
+	    		path:"/login",
+	    		// component:Login
+	    		components:{
+	    			default:Header,
+	    			content:Login,
+	    		}	
+	    	},
+	    	{
+				path:"/",
+	    		// component:Index 视图名字对应的组件(模板)
+	    		components:{
+	    			default:Header,
+	    			content:Index,
+	    			footer:Footer
+	    		}
+	    	}
+	    ]
+　　　　　
+		//2.创建一个路由
+		var routes = new VueRouter({
+			routes:routes_rule
+		})
+
+		//3.把路由挂到Vue实例上去
+		new Vue({
+			el:"#app",
+			router:routes
+		});
+      
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+	<style type="text/css" media="screen">
+		table td{
+			text-align: center;
+		}
+		table tr:first-child td:first-child{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="app">
+		<h1>我的购物车</h1>
+		<table class="table table-bordered">
+			<tr>
+				<td v-on:click="checkAllFunc">
+					<input type="checkbox" name="checkAll"　v-model="checkAll">全选/取消 ID
+				</td>
+				<td>名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>小计</td>
+				<td>管理</td>
+			</tr>
+			<tr v-for="item in list">
+				<td><input type="checkbox" v-model="pro_id" name="product" v-bind:value="item.id">{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<!-- ￥1999.00 -->
+				<td>{{item.price|cash}}</td>
+				<td><input type="text" name="number" v-on:keyup="changNumber($event,item.id)" v-bind:value="item.num"></td>
+				<td>{{item.total_price*item.num|cash}}</td>
+				<td><button type="button" class="btn btn-info btn-md" v-on:click="del($event,item.id)">删除</button></td>
+			</tr>
+			<tr v-if="list.length<=0"><td colspan="6">还没有产品喔!</td></tr>
+			<tr>
+				<td colspan="6" class="text-right">总共<b class="text-danger">{{pro_total_num}}</b>件商品，共<strong class="text-danger">{{pro_total_price|cash}}</strong></td>
+			</tr>
+		</table>
+	</div>	
+    
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/axios.js"></script>
+	<script type="text/javascript">
+	    //定义全局过器，格式单价，小计
+	    Vue.filter("cash",function(value){
+	    	return "￥"+value+".00";
+	    });
+
+		new Vue({
+			el:"#app",
+			data:{
+				list:[],
+				checkAll:false, //默认全选　不选中
+				pro_id:[]      //每个产品前面的　复选框
+			},
+			methods:{
+				getData:function(){
+					var vm = this;//当前Vue实例
+					//ajax取数据
+					axios.get("list.json")
+					.then(function(result){
+						return vm.list = result.data;
+					})
+					.catch(function(error){
+						return vm.list = ""
+						console.log(error)
+					});
+				},
+				//删除:就是移走数组中，指定下标的元素
+				del:function($event,id){
+					var pro_list = this.list;
+					for (var k in pro_list) {
+						if(id==pro_list[k].id){
+							this.list.splice(k,1);//Ｖue 中数据是响应式的，数据变了，页面也会变
+						}
+					}
+					//更新选中的产品数据
+					var select_pro = this.pro_id;//选中的产品id
+					for (var k in select_pro) {
+						if(select_pro[k]==id){
+							this.pro_id.splice(k,1);//删除当前的产品
+						}
+					}
+				},
+				// 修改数量
+				changNumber:function(event,id){
+					//这果要做ＤＯＭ操作，所以传递一个原生事件对象过来,好做表单值的修改，设置
+					var input = event.target;//当前发生事件的对象
+					var val = input.value;
+					/*if(val<=0){
+						alert("请输入>=1的正整数!");
+						return false;
+					}*/
+
+					var pro_list = this.list;
+					for (var k in pro_list) {
+						if(id==pro_list[k].id){
+							this.list[k].num=val; //Ｖue 中数据是响应式的，数据变了，页面也会变
+						}
+					}
+				},
+				//全选，取消
+				checkAllFunc:function(){
+					this.checkAll = !this.checkAll;
+					//选中列表,就把复选框的值（产品的id）放入到数组中
+					if(this.checkAll){
+						var pro_list = this.list;
+						for (var k in pro_list) {
+							this.pro_id.push(pro_list[k].id);
+						}
+					}else{
+						this.pro_id = [];//取消，就把复选框的值的数组清空
+					}
+				}
+			},
+			mounted:function(){
+				this.getData();
+			},
+			computed:{
+				//总数
+				pro_total_num:function(){
+					var num = 0;
+					if(this.list){
+						var select_pro = this.pro_id;//选中的产品id
+						num = select_pro.length;//数量＝数组长度
+					}
+					return num;
+				},
+				//总价
+				pro_total_price:function(){
+					//把每个产品的小计累加
+					var pro_list = this.list;    //所有的产品
+					var select_pro = this.pro_id;//选中的产品id
+					var total_p = 0;
+					for (var k in pro_list) {
+						//产品总价随着数量的修改自动改变，所以，这里产品的小计也动态计算
+						for(var m in select_pro){
+							//只计算 选中了的 产品的总价
+							if(select_pro[m]==pro_list[k].id){
+								total_p += pro_list[k].price*pro_list[k].num;
+							}
+						}
+					}
+					return total_p;
+				}
+			},
+			watch:{
+				pro_id:function(val,old){
+					//值发生变化的时候，才做处理
+					if(val!=old){
+						if(val.length==this.list.length){
+							this.checkAll=true;
+						}else{
+							this.checkAll=false;
+						}
+					}	
+				}
+			}
+		});
+	</script>
+</body>
+</html>

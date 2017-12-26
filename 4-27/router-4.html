@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子路由</title>
+</head>
+<body>
+	<!-- /user/user_center/profile   
+		 /user/user_center/posts
+	-->
+	<div id="app">
+		<h1>网站首页</h1>
+		<!-- <a href="user_center" title="">用户中心</a> -->
+		<router-link to="/user_center/">我的首页</router-link>
+		<router-view></router-view>
+	</div>
+   
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+　　
+　　<script>
+        //路由对应的模板/组件：用户中心
+		var UserCenter = {
+			template:`
+			<div class="my_profile">
+				 <hr>
+				<div>
+					<router-link to="/user_center/profile">我的信息</router-link>
+　					<router-link to="/user_center/posts">我发布的文章</router-link>
+				</div>
+				<router-view></router-view>
+			</div>  
+			`
+		}
+        
+        var Profile = {
+        	template: `
+				<h2>我的信息:我来自湖南~</h2>
+        	`, 
+        }
+
+        var Posts = {
+        	template: `
+        	<div class="my_article">
+        		<h2>我的文章~</h2>
+				<ul><li>文章列表-1</li><li>文章列表-2</li><li>文章列表-3</li><li>文章列表-4</li><li>文章列表-5</li></ul>
+        	</div>	
+        	`, 
+        }
+
+        var Page404 = {
+        	template: `
+        	<div class="page404">
+        	　　<h3>没有找到页面</h3>
+        		<router-link to="/">首页</router-link>
+        	</div>	
+        	`, 
+        }
+
+        //1.规则
+	    var routes_rule = [
+	    	{
+	    		path:"/user_center",
+	    		component:UserCenter,//用户中心首页模板
+	    		children:[//常规路由配置的选项
+	    		   {
+	    		   		path:" ",//没有找到路由的时候，用空路由,注意顺序
+	    		   		component:Page404
+	    		   },
+	    		   {
+	    		   	  path:"profile",
+	    		   	  component:Profile
+	    		   },
+	    		   {
+	    		   	  path:"posts",
+	    		   	  component:Posts
+	    		   }
+	    		   // {
+	    		   // 		path:"*",//没有找到路由的时候
+	    		   // 		component:Page404
+	    		   // }
+	    		]
+	    	},
+	    	{
+				path:"/",
+	    		component:UserCenter,//首页，用　用户中心模板
+	    	},
+	    	{
+		   		path:"*",//没有找到路由的时候
+		   		component:Page404
+	    	}
+	    ]
+　　　　　
+		//2.创建一个路由
+		var routes = new VueRouter({
+			routes:routes_rule
+		})
+
+		//3.把路由挂到Vue实例上去
+		new Vue({
+			el:"#app",
+			router:routes
+		});
+      
+	</script>
+
+</body>
+</html>
