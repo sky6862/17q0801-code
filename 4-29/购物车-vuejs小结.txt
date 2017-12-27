@@ -1,0 +1,114 @@
+内容回顾:工具-UI框架-实例-小结
+内容提要:购物车-vuejs小结
+
+一，实例：购物车
+   1.bootstrap
+   2.json文件读取：axios.js ajax用工具
+      axios.get();
+      axios({})
+
+　3.指令：v-for,
+   v-on
+   v-bind
+
+   4.自定义过滤器
+
+　5.Ｖue实例的选项
+el,
+data
+methods
+watch
+computed
+
+    6.钩子函数
+       mounted (onload)
+    
+    7.事件对象：做ＤＯＭ操作（获取表间的值），所以传递一个原生事件对象过来.可以进行ＤＯＭ操作。
+　　event.target;//当前发生事件的对象
+    
+二，vue小结
+　　1.vue起步：vue实例
+        〈div id="app"〉
+         </div>
+         new Vue({
+            el:"#app"
+  });
+　　
+      2.模板：{{表达式}}　在html页面上输出数据
+　　3.指令：v-指令的名称＝“表达式”,自定义的html属性，增强html功能。
+　　　　v-html
+            v-text
+v-bind
+v-on
+v-model
+v-once
+v-if
+v-else
+v-else-if
+v-show
+v-cloak
+v-for
+v-pre
+
+  4.vue实例的选项
+ new Vue({
+           　　 el:"#app"，
+　　　　　　//vue实例的选项　
+                   data,
+                   ...
+  　　});
+　
+     data:{}　　数据
+　  methods:  函数（方法）
+　  computed
+     watch 
+     这几个选项本身是一个知识点，配全一起使用
+     components
+     directive
+     filter
+     router
+
+5.组件
+　　１）.定义
+　　2).组件间通信
+　　3).props验证，
+　　4）.动态组件
+　　5）.slot
+6.自定义过滤器：Ｖue.filter()
+7.自定义指令:      Vue.directive()
+8.过渡与动画
+9.vue插件的使用：
+vue-touch
+10.vue-router
+11.vue单文件组件:（nodejs,npm,webpack）+vue cli  
+12.其它ＵI组件：element,iview,mint ui
+13.vue其它资源：axios ajax 库
+
+实例：购物车
+vuejs:响应式的数据绑定，可重用的视图组件
+
+用vue2种方式：
+
+1.页面级使用：在页面引入,象用jquery一样
+　<script type="text/javascript" src="js/vue.js"></script>
+2.工程化的：vue-cli + vue单文件组件(*.vue)
+
+参考资料：https://cn.vuejs.org/v2/guide/　　教程
+　https://cn.vuejs.org/v2/api/　　　api
+　　　　　
+***********************************************************
+实训项目：1.vuejs-购物车+复习vuejs
+***********************************************************
+下一篇：1.　Q3 手机app　2.识记面试题目+修改完善简历－end
+笔记在线地址：http://note.youdao.com/noteshare?id=fb8d89f63ef434550e432bff0da31d93
+
+     
+　
+
+
+
+
+
+
+　　　　
+　　　
