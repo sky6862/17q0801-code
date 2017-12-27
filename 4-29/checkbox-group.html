@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多个复选框的选中</title>
+</head>
+<body>
+
+	<div id="app">
+		<input type="checkbox" name="" v-model="love" checked="checked" value="1">song
+		<input type="checkbox" name="" v-model="love" checked="checked" value="2">swing
+	</div>
+
+	<script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+    	new Vue({
+    		el:"#app",
+    		data:{
+    			love:[1,2]//设置值，就选中了
+    		}
+    	});
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+  	"id":1,
+  	"name":"Iphone 8",
+  	"price":6999,
+  	"num":1
+  },
+  {
+  	"id":2,
+  	"name":"Iphone 7",
+  	"price":5999,
+  	"num":2
+  },
+  {
+  	"id":3,
+  	"name":"Iphone 6",
+  	"price":4999,
+  	"num":2
+  },
+  {
+  	"id":4,
+  	"name":"Iphone 5",
+  	"price":3999,
+  	"num":2
+  }
+]
