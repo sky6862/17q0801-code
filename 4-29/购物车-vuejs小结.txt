@@ -7,9 +7,11 @@
       axios.get();
       axios({})
 
-　3.指令：v-for,
+　3.指令：
+   v-for,
    v-on
    v-bind
+   v-model
 
    4.自定义过滤器
 
